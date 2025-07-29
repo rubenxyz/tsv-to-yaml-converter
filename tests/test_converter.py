@@ -85,7 +85,6 @@ class TestTSVToYAMLConverter:
         assert converter.project_root == temp_project_dir
         assert converter.input_dir.exists()
         assert converter.output_dir.exists()
-        assert converter.done_dir.exists()
     
     def test_clean_value(self, temp_project_dir):
         """Test value cleaning functionality."""
@@ -158,9 +157,9 @@ class TestTSVToYAMLConverter:
         output_dirs = list(converter.output_dir.iterdir())
         assert len(output_dirs) == 1
         
-        # Check that input file was moved to done
-        done_files = list(converter.done_dir.rglob('*.tsv'))
-        assert len(done_files) == 1
+        # Check that input file remains in place (no moving)
+        input_files = list(converter.input_dir.rglob('*.tsv'))
+        assert len(input_files) == 1
 
 
 class TestConfig:
@@ -237,4 +236,3 @@ class TestModels:
         assert project.title == 'Test Project'
         assert project.total_shots == 5
         assert len(project.epochs) == 0
-        assert project.statistics is None

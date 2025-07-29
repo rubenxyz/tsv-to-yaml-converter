@@ -5,14 +5,11 @@
       "MH": "Magic Hour", 
       "BH": "Blue Hour",
       "DAY": "Day",
-      "NIGHT": "Night",
-      "DAWN": "Dawn",
-      "DUSK": "Dusk"
+      "NIGHT": "Night"
     },
     "LOC_TYPE": {
       "EXT": "Exterior",
-      "INT": "Interior",
-      "EXT/INT": "Exterior/Interior"
+      "INT": "Interior"
     },
     "MOVE_TYPE": {
       "STATIC": "Static",
@@ -27,7 +24,6 @@
     },
     "MOVE_SPEED": {
       "SLOW": "Slow",
-      "MEDIUM": "Medium", 
       "FAST": "Fast",
       "VERY_SLOW": "Very Slow",
       "VERY_FAST": "Very Fast",
@@ -35,16 +31,19 @@
       "STEADY": "Steady"
     },
     "ANGLE": {
-      "LOW": "Low Angle",
-      "HIGH": "High Angle",
-      "EYE_LEVEL": "Eye Level",
-      "DUTCH": "Dutch Angle",
-      "BIRDS_EYE": "Bird's Eye",
-      "WORM_EYE": "Worm's Eye",
       "CRANE": "Crane Shot",
+      "CU": "Close Up",
+      "DAY": "Day Shot",
+      "DRONE": "Drone Shot",
+      "FS": "Full Shot",
+      "Low-MS": "Low Medium Shot",
       "LS": "Long Shot",
-      "XCU": "Extreme Close Up",
-      "Low-MS": "Low Medium Shot"
+      "MCU": "Medium Close Up",
+      "MS": "Medium Shot",
+      "MWS": "Medium Wide Shot",
+      "TS": "Two Shot",
+      "WS": "Wide Shot",
+      "XCU": "Extreme Close Up"
     }
   },
   "description": "Field mappings for translating TSV values to human-readable YAML values. Users can customize these mappings to match their specific terminology and preferences."

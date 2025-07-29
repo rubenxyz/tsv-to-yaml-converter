@@ -23,10 +23,9 @@ class TSVToYAMLConverter:
         self.user_files = self.project_root / "USER-FILES"
         self.input_dir = self.user_files / "01.INPUT"
         self.output_dir = self.user_files / "02.OUTPUT"
-        self.done_dir = self.user_files / "03.DONE"
         
         # Create directories if they don't exist
-        for directory in [self.user_files, self.input_dir, self.output_dir, self.done_dir]:
+        for directory in [self.user_files, self.input_dir, self.output_dir]:
             directory.mkdir(parents=True, exist_ok=True)
         
         # Load field mappings
@@ -143,6 +142,8 @@ class TSVToYAMLConverter:
     def _process_tsv_data(self, df: pd.DataFrame) -> Dict[int, Dict]:
         """Process TSV data into hierarchical dictionary structure."""
         epochs_dict = {}
+        current_epoch = None
+        current_scene = None
         
         for _, row in df.iterrows():
             row_data = self._clean_row_data(row, df.columns)
@@ -150,8 +151,21 @@ class TSVToYAMLConverter:
             if not self._is_valid_row(row_data):
                 continue
             
-            epoch_num, scene_num, shot_num = self._extract_row_numbers(row_data)
-            self._process_row_data(epochs_dict, row_data, epoch_num, scene_num, shot_num)
+            # Carry forward epoch and scene numbers from previous rows
+            if row_data.get('EPOCH_NUM'):
+                current_epoch = int(row_data['EPOCH_NUM'])
+            if row_data.get('SCENE_NUM'):
+                try:
+                    current_scene = int(float(row_data['SCENE_NUM']))
+                except (ValueError, TypeError):
+                    # Skip rows with invalid scene numbers
+                    continue
+            
+            if current_epoch is None or current_scene is None:
+                continue
+            
+            shot_num = int(row_data['SHOT_NUM'])
+            self._process_row_data(epochs_dict, row_data, current_epoch, current_scene, shot_num)
         
         return epochs_dict
 
@@ -161,7 +175,7 @@ class TSVToYAMLConverter:
 
     def _is_valid_row(self, row_data: Dict[str, Any]) -> bool:
         """Check if row has essential data for processing."""
-        return bool(row_data.get('EPOCH_NUM') and row_data.get('SHOT_NUM'))
+        return bool(row_data.get('SHOT_NUM'))
 
     def _extract_row_numbers(self, row_data: Dict[str, Any]) -> Tuple[int, int, int]:
         """Extract epoch, scene, and shot numbers from row data."""
@@ -406,11 +420,7 @@ class TSVToYAMLConverter:
             
             if success:
                 self.stats['processed_files'] += 1
-                # Move processed file to done directory
-                done_path = self.done_dir / relative_path
-                done_path.parent.mkdir(parents=True, exist_ok=True)
-                tsv_file.rename(done_path)
-                logger.info(f"Moved {tsv_file.name} to done directory")
+                logger.info(f"Successfully processed {tsv_file.name}")
             else:
                 self.stats['failed_files'] += 1
         
