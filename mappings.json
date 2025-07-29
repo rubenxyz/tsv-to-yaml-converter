@@ -1,0 +1,51 @@
+{
+  "field_mappings": {
+    "TIME": {
+      "GH": "Golden Hour",
+      "MH": "Magic Hour", 
+      "BH": "Blue Hour",
+      "DAY": "Day",
+      "NIGHT": "Night",
+      "DAWN": "Dawn",
+      "DUSK": "Dusk"
+    },
+    "LOC_TYPE": {
+      "EXT": "Exterior",
+      "INT": "Interior",
+      "EXT/INT": "Exterior/Interior"
+    },
+    "MOVE_TYPE": {
+      "STATIC": "Static",
+      "PAN": "Pan",
+      "TILT": "Tilt",
+      "DOLLY": "Dolly",
+      "CRANE": "Crane",
+      "HANDHELD": "Handheld",
+      "STEADICAM": "Steadicam",
+      "MOVE-IN": "Move In",
+      "LOCKED": "Locked"
+    },
+    "MOVE_SPEED": {
+      "SLOW": "Slow",
+      "MEDIUM": "Medium", 
+      "FAST": "Fast",
+      "VERY_SLOW": "Very Slow",
+      "VERY_FAST": "Very Fast",
+      "SLOW & SMOOTH": "Slow & Smooth",
+      "STEADY": "Steady"
+    },
+    "ANGLE": {
+      "LOW": "Low Angle",
+      "HIGH": "High Angle",
+      "EYE_LEVEL": "Eye Level",
+      "DUTCH": "Dutch Angle",
+      "BIRDS_EYE": "Bird's Eye",
+      "WORM_EYE": "Worm's Eye",
+      "CRANE": "Crane Shot",
+      "LS": "Long Shot",
+      "XCU": "Extreme Close Up",
+      "Low-MS": "Low Medium Shot"
+    }
+  },
+  "description": "Field mappings for translating TSV values to human-readable YAML values. Users can customize these mappings to match their specific terminology and preferences."
+}

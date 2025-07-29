@@ -159,6 +159,71 @@ def init_config(ctx: click.Context, output: Path) -> None:
 
 
 @cli.command()
+@click.option(
+    "--mappings-file",
+    type=click.Path(file_okay=True, dir_okay=False, path_type=Path),
+    default=Path("mappings.json"),
+    help="Path to mappings configuration file"
+)
+@click.pass_context
+def init_mappings(ctx: click.Context, mappings_file: Path) -> None:
+    """Initialize a new mappings configuration file."""
+    try:
+        # Create default mappings
+        default_mappings = {
+            "TIME": {
+                "GH": "Golden Hour",
+                "MH": "Magic Hour", 
+                "BH": "Blue Hour",
+                "DAY": "Day",
+                "NIGHT": "Night",
+                "DAWN": "Dawn",
+                "DUSK": "Dusk"
+            },
+            "LOC_TYPE": {
+                "EXT": "Exterior",
+                "INT": "Interior",
+                "EXT/INT": "Exterior/Interior"
+            },
+            "MOVE_TYPE": {
+                "STATIC": "Static",
+                "PAN": "Pan",
+                "TILT": "Tilt",
+                "DOLLY": "Dolly",
+                "CRANE": "Crane",
+                "HANDHELD": "Handheld",
+                "STEADICAM": "Steadicam"
+            },
+            "MOVE_SPEED": {
+                "SLOW": "Slow",
+                "MEDIUM": "Medium", 
+                "FAST": "Fast",
+                "VERY_SLOW": "Very Slow",
+                "VERY_FAST": "Very Fast"
+            },
+            "ANGLE": {
+                "LOW": "Low Angle",
+                "HIGH": "High Angle",
+                "EYE_LEVEL": "Eye Level",
+                "DUTCH": "Dutch Angle",
+                "BIRDS_EYE": "Bird's Eye",
+                "WORM_EYE": "Worm's Eye"
+            }
+        }
+        
+        # Create config and save mappings
+        config = Config()
+        config.save_mappings(default_mappings, mappings_file)
+        
+        console.print(f"✅ [green]Mappings file created: {mappings_file}[/green]")
+        console.print("📝 Edit the file to customize your field mappings.")
+        
+    except Exception as e:
+        console.print(f"❌ [red]Error creating mappings: {e}[/red]")
+        sys.exit(1)
+
+
+@cli.command()
 @click.pass_context
 def status(ctx: click.Context) -> None:
     """Show current project status."""

@@ -7,7 +7,7 @@ from pathlib import Path
 from typing import Any, Dict, List, Optional, Tuple
 
 from .config import Config
-from .models import ShotList, Project, Epoch, Scene, Shot, ShotTimecode, CameraMovement, TimePeriod, Statistics
+from .models import ShotList, Project, Epoch, Scene, Shot, ShotTimecode, CameraMovement, TimePeriod
 from loguru import logger
 
 
@@ -29,6 +29,9 @@ class TSVToYAMLConverter:
         for directory in [self.user_files, self.input_dir, self.output_dir, self.done_dir]:
             directory.mkdir(parents=True, exist_ok=True)
         
+        # Load field mappings
+        self.field_mappings = self.config.load_mappings()
+        
         # Processing statistics
         self.stats = {
             'total_files': 0,
@@ -46,72 +49,36 @@ class TSVToYAMLConverter:
         output_dir.mkdir(parents=True, exist_ok=True)
         return output_dir
     
-    def clean_value(self, value: Any) -> Any:
+    def clean_value(self, value: Any, field_name: Optional[str] = None) -> Any:
         """Clean and normalize values, handling NaN/null values and BOM characters."""
         if pd.isna(value) or value == '' or str(value).strip() == '':
             return None
         if isinstance(value, str):
             # Remove BOM characters and strip whitespace
             cleaned = value.strip().replace('\ufeff', '')
-            return cleaned if cleaned else None
+            if not cleaned:
+                return None
+            
+            # Apply field mappings if available
+            if field_name and hasattr(self, 'field_mappings'):
+                mapped_value = self._apply_field_mapping(field_name, cleaned)
+                if mapped_value:
+                    return mapped_value
+            
+            return cleaned
         return value
+    
+    def _apply_field_mapping(self, field_name: str, value: str) -> Optional[str]:
+        """Apply field mapping if available."""
+        if not hasattr(self, 'field_mappings') or not self.field_mappings:
+            return None
+        
+        field_mappings = self.field_mappings.get(field_name, {})
+        return field_mappings.get(value, None)
     
 
     
-    def generate_statistics(self, data: ShotList) -> Statistics:
-        """Generate project statistics."""
-        epochs = data.project.epochs
-        total_epochs = len(epochs)
-        total_scenes = sum(len(epoch.scenes) for epoch in epochs)
-        total_shots = sum(len(scene.shots) for epoch in epochs for scene in epoch.scenes)
-        
-        # Calculate total duration if possible
-        total_duration = "Unknown"
-        try:
-            first_shot = epochs[0].scenes[0].shots[0]
-            last_epoch = epochs[-1]
-            last_scene = last_epoch.scenes[-1]
-            last_shot = last_scene.shots[-1]
-            
-            if first_shot.shot_timecode.in_time and last_shot.shot_timecode.out_time:
-                total_duration = f"{first_shot.shot_timecode.in_time} - {last_shot.shot_timecode.out_time}"
-        except (IndexError, KeyError):
-            pass
-        
-        # Shot type distribution
-        shot_types: Dict[str, int] = {}
-        camera_movements: Dict[str, int] = {}
-        
-        for epoch in epochs:
-            for scene in epoch.scenes:
-                for shot in scene.shots:
-                    # Count angles/shot types
-                    angle = shot.angle or "Unknown"
-                    shot_types[angle] = shot_types.get(angle, 0) + 1
-                    
-                    # Count camera movements
-                    movement = shot.camera_movement.movement_type or "Unknown"
-                    camera_movements[movement] = camera_movements.get(movement, 0) + 1
-        
-        # Calculate time span if epochs exist
-        time_span = "Unknown"
-        if epochs:
-            first_epoch = epochs[0]
-            last_epoch = epochs[-1]
-            start = first_epoch.time_period.start
-            end = last_epoch.time_period.end
-            if start and end:
-                time_span = f"{start}-{end}"
-        
-        return Statistics(
-            total_epochs=total_epochs,
-            total_scenes=total_scenes,
-            total_shots=total_shots,
-            total_duration=total_duration,
-            time_span=time_span,
-            shot_type_distribution=dict(sorted(shot_types.items(), key=lambda x: x[1], reverse=True)),
-            camera_movement_distribution=dict(sorted(camera_movements.items(), key=lambda x: x[1], reverse=True))
-        )
+
     
     def convert_tsv_to_yaml(self, tsv_file: Path, output_file: Path, project_title: Optional[str] = None) -> bool:
         """
@@ -190,7 +157,7 @@ class TSVToYAMLConverter:
 
     def _clean_row_data(self, row: pd.Series, columns: List[str]) -> Dict[str, Any]:
         """Clean all values in a row."""
-        return {col: self.clean_value(row[col]) for col in columns}
+        return {col: self.clean_value(row[col], col) for col in columns}
 
     def _is_valid_row(self, row_data: Dict[str, Any]) -> bool:
         """Check if row has essential data for processing."""
@@ -312,18 +279,17 @@ class TSVToYAMLConverter:
         )
 
     def _finalize_and_write(self, project: Project, output_file: Path) -> None:
-        """Generate statistics and write YAML output."""
-        # Generate statistics
-        stats = self.generate_statistics(ShotList(project=project))
-        project.statistics = stats
-        
+        """Write YAML output."""
         # Write YAML file
         self._write_yaml_file(project, output_file)
         
         # Log success
+        total_epochs = len(project.epochs)
+        total_scenes = sum(len(epoch.scenes) for epoch in project.epochs)
+        total_shots = sum(len(scene.shots) for epoch in project.epochs for scene in epoch.scenes)
+        
         logger.info(f"Successfully wrote YAML to {output_file.name}")
-        logger.info(f"  → {stats.total_epochs} epochs, {stats.total_scenes} scenes, {stats.total_shots} shots")
-        logger.info(f"  → Total duration: {stats.total_duration}")
+        logger.info(f"  → {total_epochs} epochs, {total_scenes} scenes, {total_shots} shots")
 
     def _write_yaml_file(self, project: Project, output_file: Path) -> None:
         """Write project data to YAML file."""

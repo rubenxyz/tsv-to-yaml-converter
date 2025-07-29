@@ -61,16 +61,7 @@ class Epoch(BaseModel):
     scenes: List[Scene] = Field(default_factory=list)
 
 
-class Statistics(BaseModel):
-    """Project statistics."""
-    
-    total_epochs: int
-    total_scenes: int
-    total_shots: int
-    total_duration: str
-    time_span: str
-    shot_type_distribution: Dict[str, int]
-    camera_movement_distribution: Dict[str, int]
+
 
 
 class Project(BaseModel):
@@ -79,7 +70,6 @@ class Project(BaseModel):
     title: str
     total_shots: int
     epochs: List[Epoch] = Field(default_factory=list)
-    statistics: Optional[Statistics] = None
 
 
 class ShotList(BaseModel):
