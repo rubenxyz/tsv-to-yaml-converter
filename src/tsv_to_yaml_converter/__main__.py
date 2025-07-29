@@ -15,9 +15,6 @@ from .config import Config
 from loguru import logger
 
 console = Console()
-
-
-
 @click.group()
 @click.version_option(version="1.0.0", prog_name="tsv-to-yaml-converter")
 @click.option(
@@ -255,12 +252,12 @@ def status(ctx: click.Context) -> None:
             str(len(output_dirs))
         )
         
-        # Done directory
-        done_files = list(converter.done_dir.rglob('*.tsv'))
+        # Output directory status
+        output_files = list(converter.output_dir.rglob('*.yaml'))
         table.add_row(
-            "03.DONE",
-            "✅ Has Processed" if done_files else "📂 Empty",
-            str(len(done_files))
+            "02.OUTPUT",
+            "✅ Has Output" if output_files else "📂 Empty",
+            str(len(output_files))
         )
         
         console.print(table)

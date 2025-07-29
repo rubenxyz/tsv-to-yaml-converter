@@ -59,11 +59,6 @@ class Epoch(BaseModel):
     epoch_number: int
     time_period: TimePeriod
     scenes: List[Scene] = Field(default_factory=list)
-
-
-
-
-
 class Project(BaseModel):
     """Project information."""
     

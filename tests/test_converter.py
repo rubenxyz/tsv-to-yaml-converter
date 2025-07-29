@@ -9,7 +9,7 @@ import pandas as pd
 
 from tsv_to_yaml_converter.converter import TSVToYAMLConverter
 from tsv_to_yaml_converter.config import Config
-from tsv_to_yaml_converter.models import ShotList, Project, Epoch, Scene, Shot
+from tsv_to_yaml_converter.models import Project, Shot
 
 
 @pytest.fixture
@@ -101,9 +101,6 @@ class TestTSVToYAMLConverter:
         
         # Test numeric values
         assert converter.clean_value(123) == 123
-    
-
-    
     def test_convert_tsv_to_yaml(self, temp_project_dir, sample_tsv_file):
         """Test TSV to YAML conversion."""
         converter = TSVToYAMLConverter(temp_project_dir)

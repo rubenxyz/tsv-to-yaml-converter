@@ -4,10 +4,10 @@ import pandas as pd
 import yaml
 from datetime import datetime
 from pathlib import Path
-from typing import Any, Dict, List, Optional, Tuple
+from typing import Any, Dict, List, Optional
 
 from .config import Config
-from .models import ShotList, Project, Epoch, Scene, Shot, ShotTimecode, CameraMovement, TimePeriod
+from .models import Project, Epoch, Scene, Shot, ShotTimecode, CameraMovement, TimePeriod
 from loguru import logger
 
 
@@ -74,11 +74,6 @@ class TSVToYAMLConverter:
         
         field_mappings = self.field_mappings.get(field_name, {})
         return field_mappings.get(value, None)
-    
-
-    
-
-    
     def convert_tsv_to_yaml(self, tsv_file: Path, output_file: Path, project_title: Optional[str] = None) -> bool:
         """
         Convert TSV shot list to hierarchical YAML format.
@@ -177,12 +172,7 @@ class TSVToYAMLConverter:
         """Check if row has essential data for processing."""
         return bool(row_data.get('SHOT_NUM'))
 
-    def _extract_row_numbers(self, row_data: Dict[str, Any]) -> Tuple[int, int, int]:
-        """Extract epoch, scene, and shot numbers from row data."""
-        epoch_num = int(row_data['EPOCH_NUM'])
-        scene_num = int(row_data['SCENE_NUM']) if row_data.get('SCENE_NUM') else 1
-        shot_num = int(row_data['SHOT_NUM'])
-        return epoch_num, scene_num, shot_num
+
 
     def _process_row_data(self, epochs_dict: Dict, row_data: Dict[str, Any], 
                          epoch_num: int, scene_num: int, shot_num: int) -> None:
@@ -321,7 +311,7 @@ class TSVToYAMLConverter:
         lines = yaml_content.split('\n')
         formatted_lines = []
         
-        for i, line in enumerate(lines):
+        for _, line in enumerate(lines):
             # Add empty line before epoch_number
             if '- epoch_number:' in line:
                 formatted_lines.append('')
