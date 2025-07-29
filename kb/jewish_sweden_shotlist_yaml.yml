@@ -1,0 +1,2788 @@
+```yaml
+project:
+  title: 250 Years of Jewish Life in Sweden
+  epochs:
+    -
+      epoch_number: 1
+      time_period:
+        start: 1774
+        end: 1811
+      scenes:
+        -
+          scene_number: 1
+          location_type: EXT
+          time: MH
+          location: OUTSCIRTS OF STOCKHOLM
+          shots:
+            -
+              shot_number: 1
+              shot_timecode:
+                in: "00:00:13,680"
+                out: "00:00:20,280"
+              specific_area: FROM THE AIR
+              camera_movement:
+                speed: SLOW & SMOOTH
+                type: MOVE-IN
+              angle: CRANE
+              description: "CRANE SHOT over a rural settlement on the outskirts of mid-1700s Stockholm.  The trees stand bare, the ground a patchwork of frozen mud and dead grass. Peasants walk along the muddied paths toward a weathered massive medieval church. In the distance, the sparse skyline of 18th-century Stockholm comes into view—Gamla Stan's clustered rooftops, the spires of church towers piercing the pale sky, and the silhouette of the Royal Palace rising over the city. Along the horizon, thin plumes of smoke curl upward from chimneys in the old town, dissipating into the gray northern air."
+        -
+          scene_number: 2
+          location_type: INT
+          time: DAY
+          location: MEDEVIL CHURCH
+          shots:
+            -
+              shot_number: 2
+              timecode:
+                in: "00:00:20,280"
+                out: "00:00:24,200"
+              specific_area: CENTER AILE
+              camera_movement:
+                speed: STATIC
+                type: LOCKED
+              angle: LS
+              description: "Inside a MEDIEVAL_STONE_CHURCH, the view looks straight down the central aisle toward the west entrance. On the left side of the nave, male peasants sit quietly in the pews, heads bowed in prayer; on the right, female peasants mirror them in solemn devotion. Down the aisle advances a liturgical procession: at the front, a young crucifer carries the processional cross, followed by a SWEDISH_PRIEST in flowing vestments, flanked by catechists and deacons. Behind them, choir members proceed in hushed reverence, their footsteps echoing softly beneath the vaulted arches."
+            -
+              shot_number: 3
+              timecode:
+                in: "00:00:24,200"
+                out: "00:00:26,840"
+              specific_area: STANDS
+              camera_movement:
+                speed: STEADY
+                type: HANDHELD
+              angle: "XCU "
+              description: "of young swedish gril mouthing prayer in church, her hands clasp and held to her forehead."
+            -
+              shot_number: 4
+              timecode:
+                in: "00:00:26,840"
+                out: "00:00:30,440"
+              specific_area: PODIUM
+              camera_movement:
+                speed: STEADY
+                type: HANDHELD
+              angle: Low-MS
+              description: " of a strict looking priest preaching"
+            -
+              shot_number: 5
+              timecode:
+                in: "00:00:30,440"
+                out: "00:00:33,720"
+              specific_area: ALTAR
+              camera_movement:
+                speed: SLOW & SMOOTH
+                type: DOLLY-IN
+              angle: "MS "
+              description: "we move in on a cross on the wall"
+            -
+              shot_number: 6
+              timecode:
+                in: "00:00:33,720"
+                out: "00:00:35,720"
+              specific_area: CENTER AILE
+              camera_movement:
+                speed: SLOW & SMOOTH
+                type: DOLLY-IN
+              angle: "MS "
+              description: "A jew in a gown steps forward out of the shadows"
+            -
+              shot_number: 7
+              timecode:
+                in: "00:00:35,720"
+                out: "00:00:39,640"
+              specific_area: BAPTISMAL FONT
+              camera_movement:
+                speed: SLOW & SMOOTH
+                type: DOLLY-IN
+              angle: MWS
+              description: "At a stone baptismal font, often near the church entrance. The pastor, in white surplice and black preaching gown, pours water over the convert's head. Water droplets caught in motion. Moment of solemnity and grace."
+            -
+              shot_number: 8
+              timecode:
+                in: "00:00:39,640"
+                out: "00:00:43,440"
+              specific_area: CENTER AILE
+              camera_movement:
+                speed: SLOW & SMOOTH
+                type: DOLLY-IN
+              angle: MCU
+              description: "of the converts face as water pours over it"
+        -
+          scene_number: 3
+          location_type: INT
+          time: DAY
+          location: SWEDISH KING'S PALACE
+          shots:
+            -
+              shot_number: 9
+              timecode:
+                in: "00:00:43,480"
+                out: "00:00:46,240"
+              specific_area: KONSELJSALEN
+              camera_movement:
+                speed: SLOW & SMOOTH
+                type: DOLLY-IN
+              angle: WS
+              description: "Gustav III  is sitting at his desk and a red pillow is being brought to him with seals."
+            -
+              shot_number: 10
+              timecode:
+                in: "00:00:46,240"
+                out: "00:00:47,920"
+              specific_area: null
+              camera_movement:
+                speed: STATIC
+                type: LOCKED
+              angle: CU
+              description: " on Gustavs face as he admires a golden seal"
+            -
+              shot_number: 11
+              timecode:
+                in: "00:00:47,920"
+                out: "00:00:49,520"
+              specific_area: null
+              camera_movement:
+                speed: SLOW & SMOOTH
+                type: DOLLY-IN
+              angle: WS
+              description: "Gustav and his associates"
+        -
+          scene_number: 4
+          location_type: EXT
+          time: MH
+          location: STOCKHOLM HARBOR
+          shots:
+            -
+              shot_number: 12
+              timecode:
+                in: "00:00:49,520"
+                out: "00:00:52,320"
+              specific_area: DOCKS
+              camera_movement:
+                speed: STEADY
+                type: HANDHELD
+              angle: MWS
+              description: "Isak walks off the boat and on to a the dock, looks around confused, then walks towards the city in thebackgorund. "
+        -
+          scene_number: 5
+          location_type: EXT
+          time: DAY
+          location: CRAFTSMAN WORKSHOP
+          shots:
+            -
+              shot_number: 13
+              timecode:
+                in: "00:00:52,320"
+                out: "00:00:54,000"
+              specific_area: WORK BENCH
+              camera_movement:
+                speed: SLOW & SMOOTH
+                type: DOLLY-IN
+              angle: CU
+              description: "Aaron Isaks is working on his latest seal in workshop"
+            -
+              shot_number: 14
+              timecode:
+                in: "00:00:54,000"
+                out: "00:00:55,920"
+              specific_area: null
+              camera_movement:
+                speed: STATIC
+                type: LOCKED
+              angle: "XCU "
+              description: " on a metal tool carving a golden seal"
+        -
+          scene_number: 6
+          location_type: INT
+          time: DAY
+          location: SWEDISH KING'S PALACE
+          shots:
+            -
+              shot_number: 15
+              timecode:
+                in: "00:00:55,920"
+                out: "00:00:59,080"
+              specific_area: RIKSSALEN
+              camera_movement:
+                speed: STATIC
+                type: LOCKED
+              angle: "MS "
+              description: "Isaak bows for Gustav III"
+            -
+              shot_number: 16
+              timecode:
+                in: "00:00:59,080"
+                out: "00:01:01,240"
+              specific_area: null
+              camera_movement:
+                speed: STATIC
+                type: LOCKED
+              angle: MCU
+              description: "King Gustav III sitting on his thrown"
+            -
+              shot_number: 17
+              timecode:
+                in: "00:01:01,240"
+                out: "00:01:04,880"
+              specific_area: null
+              camera_movement:
+                speed: STATIC
+                type: LOCKED
+              angle: MCU
+              description: " of Isaak talkign to the king Gustav III"
+            -
+              shot_number: 18
+              timecode:
+                in: "00:01:04,880"
+                out: "00:01:08,400"
+              specific_area: null
+              camera_movement:
+                speed: STATIC
+                type: LOCKED
+              angle: MCU
+              description: "Gustav III listen to Isaak, thinks."
+            -
+              shot_number: 19
+              timecode:
+                in: "00:01:08,400"
+                out: "00:01:10,280"
+              specific_area: null
+              camera_movement:
+                speed: STATIC
+                type: LOCKED
+              angle: CU
+              description: "Isaak's face turns from serious to smiling"
+            -
+              shot_number: 20
+              timecode:
+                in: "00:01:10,280"
+                out: "00:01:12,880"
+              specific_area: null
+              camera_movement:
+                speed: STATIC
+                type: LOCKED
+              angle: "CU "
+              description: " of The king Gustav IIII smiling"
+            -
+              shot_number: 21
+              timecode:
+                in: "00:01:12,880"
+                out: "00:01:17,680"
+              specific_area: null
+              camera_movement:
+                speed: SLOW & SMOOTH
+                type: DOLLY-IN
+              angle: "MS "
+              description: "In the back of the room, some men (guilds) are whispering"
+            -
+              shot_number: 22
+              timecode:
+                in: "00:01:17,680"
+                out: "00:01:21,680"
+              specific_area: null
+              camera_movement:
+                speed: STATIC
+                type: LOCKED
+              angle: MCU
+              description: "Isaak looking into the camera, shrugging his hsoulder"
+        -
+          scene_number: 7
+          location_type: INT
+          time: DAY
+          location: SWEDISH KING'S PALACE
+          shots:
+            -
+              shot_number: 23
+              timecode:
+                in: "00:01:21,680"
+                out: "00:01:24,680"
+              specific_area: KONSELJSALEN
+              camera_movement:
+                speed: SLOW & SMOOTH
+                type: DOLLY-IN
+              angle: WS
+              description: "of Gustav III's office"
+            -
+              shot_number: 24
+              timecode:
+                in: "00:01:24,680"
+                out: "00:01:27,000"
+              specific_area: null
+              camera_movement:
+                speed: SLOW & SMOOTH
+                type: PARALAX
+              angle: "MS "
+              description: "the Gustav III at his desk, signs a peace of paper"
+            -
+              shot_number: 25
+              timecode:
+                in: "00:01:27,000"
+                out: "00:01:28,120"
+              specific_area: null
+              camera_movement:
+                speed: STATIC
+                type: LOCKED
+              angle: "XCU "
+              description: " of feather pen signing decree"
+            -
+              shot_number: 26
+              timecode:
+                in: "00:01:28,120"
+                out: "00:01:28,320"
+              specific_area: null
+              camera_movement:
+                speed: STATIC
+                type: LOCKED
+              angle: "XCU "
+              description: " of  sealing wax over a candle"
+            -
+              shot_number: 27
+              timecode:
+                in: "00:01:28,320"
+                out: "00:01:28,520"
+              specific_area: null
+              camera_movement:
+                speed: STATIC
+                type: LOCKED
+              angle: "XCU "
+              description: " of sealing wax dabbed on letter"
+            -
+              shot_number: 28
+              timecode:
+                in: "00:01:28,520"
+                out: "00:01:29,000"
+              specific_area: null
+              camera_movement:
+                speed: STATIC
+                type: LOCKED
+              angle: "XCU "
+              description: " seal pressed onto the hot sealing wax"
+            -
+              shot_number: 29
+              timecode:
+                in: "00:01:29,000"
+                out: "00:01:30,280"
+              specific_area: null
+              camera_movement:
+                speed: STATIC
+                type: LOCKED
+              angle: "XCU "
+              description: "of the signed and sealed decreee"
+        -
+          scene_number: 8
+          location_type: EXT
+          time: DAY
+          location: STOCKHOLM HARBOR
+          shots:
+            -
+              shot_number: 30
+              timecode:
+                in: "00:01:30,280"
+                out: "00:01:33,240"
+              specific_area: DOCKS
+              camera_movement:
+                speed: SLOW & SMOOTH
+                type: DOLLY-IN
+              angle: MWS
+              description: "Isaak hugging two new arrivals at the dock"
+            -
+              shot_number: 31
+              timecode:
+                in: "00:01:33,240"
+                out: "00:01:35,520"
+              specific_area: null
+              camera_movement:
+                speed: SLOW & SMOOTH
+                type: DOLLY-OUT
+              angle: MWS
+              description: "Jump cut to Isaak and the two men walking, talking"
+        -
+          scene_number: 9
+          location_type: INT
+          time: DAY
+          location: IMPROVEVISED SYNAGOGE
+          shots:
+            -
+              shot_number: 32
+              timecode:
+                in: "00:01:35,520"
+                out: "00:01:40,200"
+              specific_area: LARGE HALL
+              camera_movement:
+                speed: SLOW & SMOOTH
+                type: DOLLY-IN
+              angle: MWS
+              description: "Isaak and the Jews are praying"
+        -
+          scene_number: 10
+          location_type: INT
+          time: DAY
+          location: CLERK'S OFFICE
+          shots:
+            -
+              shot_number: 33
+              timecode:
+                in: "00:01:40,200"
+                out: "00:01:42,480"
+              specific_area: CLERK'S OFFICE
+              camera_movement:
+                speed: STATIC
+                type: LOCKED
+              angle: "MS "
+              description: "over the shoulder shot of Swedish man, Isaak is signing paper while fellow Jewish men are standing by his side"
+            -
+              shot_number: 34
+              timecode:
+                in: "00:01:42,480"
+                out: "00:01:44,480"
+              specific_area: null
+              camera_movement:
+                speed: STATIC
+                type: LOCKED
+              angle: CU
+              description: " of hands shaking"
+        -
+          scene_number: 11
+          location_type: EXT
+          time: DAY
+          location: RURAL CEMETARY
+          shots:
+            -
+              shot_number: 35
+              timecode:
+                in: "00:01:44,480"
+                out: "00:01:48,480"
+              specific_area: SIDELINES
+              camera_movement:
+                speed: SLOW & SMOOTH
+                type: DOLLY-IN
+              angle: WS
+              description: "Isaak and his men are standing by the cementary, discussing"
+            -
+              shot_number: 36
+              timecode:
+                in: "00:01:48,480"
+                out: "00:01:52,320"
+              specific_area: null
+              camera_movement:
+                speed: STATIC
+                type: LOCKED
+              angle: "MS "
+              description: "Isaak and his men are standing by the cementary, discussing"
+        -
+          scene_number: 12
+          location_type: INT
+          time: DAY
+          location: IMPROVEVISED SYNAGOGE
+          shots:
+            -
+              shot_number: 37
+              timecode:
+                in: "00:01:52,320"
+                out: "00:01:55,080"
+              specific_area: LARGE ROOM
+              camera_movement:
+                speed: SLOW & SMOOTH
+                type: DOLLY-IN
+              angle: MWS
+              description: "Isaak and his men are eating together"
+        -
+          scene_number: 13
+          location_type: EXT
+          time: DAY
+          location: STOCKHOLM HARBOR
+          shots:
+            -
+              shot_number: 38
+              timecode:
+                in: "00:01:55,080"
+                out: "00:01:56,960"
+              specific_area: DOCKS
+              camera_movement:
+                speed: STATIC
+                type: LOCKED
+              angle: MWS
+              description: "a jew doctor arrivign with his family"
+        -
+          scene_number: 14
+          location_type: INT
+          time: DAY
+          location: MIDDLE CLASS HOME
+          shots:
+            -
+              shot_number: 39
+              timecode:
+                in: "00:01:56,960"
+                out: "00:01:59,360"
+              specific_area: KITCHEN
+              camera_movement:
+                speed: STATIC
+                type: LOCKED
+              angle: "MS "
+              description: "A Jewish doctor is treating a Swedish patient"
+    -
+      epoch_number: 2
+      time_period:
+        start: 1782
+        end: 1837
+      scenes:
+        -
+          scene_number: 15
+          location_type: INT
+          time: DAY
+          location: SWEDISH PARLAMENT
+          shots:
+            -
+              shot_number: 40
+              timecode:
+                in: "00:01:59,360"
+                out: "00:02:02,000"
+              specific_area: Riksdagens kammare
+              camera_movement:
+                speed: STATIC
+                type: LOCKED
+              angle: WS
+              description: "of Swedish parlament"
+            -
+              shot_number: 41
+              timecode:
+                in: "00:02:02,000"
+                out: "00:02:04,840"
+              specific_area: Speaker's podium
+              camera_movement:
+                speed: SLOW & SMOOTH
+                type: DOLLY-IN
+              angle: "MS "
+              description: "Angry Swdish politican speaking"
+            -
+              shot_number: 42
+              timecode:
+                in: "00:02:04,840"
+                out: "00:02:07,760"
+              specific_area: Seats
+              camera_movement:
+                speed: SLOW & SMOOTH
+                type: DOLLY-IN
+              angle: MCU
+              description: "Swedish policitan listening"
+            -
+              shot_number: 43
+              timecode:
+                in: "00:02:07,760"
+                out: "00:02:11,200"
+              specific_area: Speaker's podium
+              camera_movement:
+                speed: SLOW & SMOOTH
+                type: DOLLY-IN
+              angle: MCU
+              description: "Swedish parlamentarian reads out the new law"
+        -
+          scene_number: 16
+          location_type: INT
+          time: DAY
+          location: SMALL FABRIC STORE
+          shots:
+            -
+              shot_number: 44
+              timecode:
+                in: "00:02:11,200"
+                out: "00:02:13,600"
+              specific_area: MAIN ROOM
+              camera_movement:
+                speed: SLOW & SMOOTH
+                type: DOLLY-IN
+              angle: MWS
+              description: "In the full light of day, a Jewish merchant arranges bolts of fabric inside a narrow shop while a Swedish customer leans in to examine the goods."
+        -
+          scene_number: 17
+          location_type: INT
+          time: DAY
+          location: SYNAGOGE
+          shots:
+            -
+              shot_number: 45
+              timecode:
+                in: "00:02:13,600"
+                out: "00:02:15,920"
+              specific_area: LARGE ROOM
+              camera_movement:
+                speed: SLOW & SMOOTH
+                type: DOLLY-IN
+              angle: MWS
+              description: " At dusk, ten Jewish men gather in a dim attic room, their faces lit by the last light through the window as an elder softly chants the evening prayers."
+        -
+          scene_number: 18
+          location_type: INT
+          time: DAY
+          location: SMALL TAILOR SHOP
+          shots:
+            -
+              shot_number: 46
+              timecode:
+                in: "00:02:15,920"
+                out: "00:02:18,280"
+              specific_area: MAIN ROOM
+              camera_movement:
+                speed: SLOW & SMOOTH
+                type: DOLLY-IN
+              angle: MWS
+              description: "In the gray morning light, a Jewish tailor measures the arm of a Swedish naval officer while a young Jewish apprentice sorts pins on a small workbench."
+        -
+          scene_number: 19
+          location_type: INT
+          time: DAY
+          location: UNDER CLASS HOME
+          shots:
+            -
+              shot_number: 47
+              timecode:
+                in: "00:02:18,280"
+                out: "00:02:20,720"
+              specific_area: KITCHEN
+              camera_movement:
+                speed: SLOW & SMOOTH
+                type: DOLLY-IN
+              angle: MWS
+              description: "At dusk, a Jewish widow lights two candles in a modest kitchen as her children sit silently at a table laid with bread and fish."
+        -
+          scene_number: 20
+          location_type: INT
+          time: DAY
+          location: COUNTRY ROAD
+          shots:
+            -
+              shot_number: 48
+              timecode:
+                in: "00:02:20,720"
+                out: "00:02:23,120"
+              specific_area: ROADSIDE STONE
+              camera_movement:
+                speed: SLOW & SMOOTH
+                type: DOLLY-IN
+              angle: FS
+              description: "Under a cloudy sky, a Jewish peddler opens his bundle on a roadside stone as curious Swedish villagers step forward to inspect the wares."
+        -
+          scene_number: 21
+          location_type: INT
+          time: DAY
+          location: UPPER CLASS HOME
+          shots:
+            -
+              shot_number: 49
+              timecode:
+                in: "00:02:23,120"
+                out: "00:02:25,680"
+              specific_area: LIVING ROOM
+              camera_movement:
+                speed: SLOW & SMOOTH
+                type: DOLLY-IN
+              angle: "MS "
+              description: " At dawn, a Jewish boy sits at a desk copying Hebrew letters while his father tightens the straps of tefillin and a Swedish tutor waits with folded arms."
+        -
+          scene_number: 22
+          location_type: INT
+          time: DAY
+          location: TAVERN
+          shots:
+            -
+              shot_number: 50
+              timecode:
+                in: "00:02:25,680"
+                out: "00:02:28,240"
+              specific_area: COURTYARD
+              camera_movement:
+                speed: SLOW & SMOOTH
+                type: DOLLY-IN
+              angle: DAY
+              description: "At night, a young Jewish violinist plays in a tavern courtyard while a few Swedish men seated under a wooden awning glance toward him between drinks."
+        -
+          scene_number: 23
+          location_type: EXT
+          time: MH
+          location: STOCKHOLM
+          shots:
+            -
+              shot_number: 51
+              timecode:
+                in: "00:02:28,240"
+                out: "00:02:30,480"
+              specific_area: GAMLA STAN
+              camera_movement:
+                speed: SLOW & SMOOTH
+                type: DRONE-PAN
+              angle: DRONE
+              description: "Panning shot View of 1800s Stockholm"
+        -
+          scene_number: 24
+          location_type: EXT
+          time: MH
+          location: GAMLA STAN
+          shots:
+            -
+              shot_number: 52
+              timecode:
+                in: "00:02:30,480"
+                out: "00:02:32,360"
+              specific_area: JÄRNTORGET
+              camera_movement:
+                speed: STATIC
+                type: LOCKED
+              angle: MWS
+              description: " In the brightness of the market square, a Jewish woman with a linen bundle under her arm argues in Swedish with a fishmonger over a smoked herring."
+        -
+          scene_number: 25
+          location_type: EXT
+          time: MH
+          location: GAMLA STAN
+          shots:
+            -
+              shot_number: 53
+              timecode:
+                in: "00:02:32,360"
+                out: "00:02:34,400"
+              specific_area: JÄRNTORGET
+              camera_movement:
+                speed: STATIC
+                type: LOCKED
+              angle: "MS "
+              description: " Jewish woman buying groceiers at the town square"
+        -
+          scene_number: 26
+          location_type: INT
+          time: DAY
+          location: SHOE SHOP
+          shots:
+            -
+              shot_number: 54
+              timecode:
+                in: "00:02:34,400"
+                out: "00:02:36,480"
+              specific_area: MAIN ROOM
+              camera_movement:
+                speed: STATIC
+                type: LOCKED
+              angle: "MS "
+              description: "A jewish shoe makers"
+        -
+          scene_number: 27
+          location_type: INT
+          time: DAY
+          location: SIMPLE HOME
+          shots:
+            -
+              shot_number: 55
+              timecode:
+                in: "00:02:36,480"
+                out: "00:02:38,720"
+              specific_area: KITCHEN
+              camera_movement:
+                speed: SLOW & SMOOTH
+                type: DOLLY-IN
+              angle: MWS
+              description: "Father smiling at his two kids sitting by the breakfast table. Mom servers eggs."
+    -
+      epoch_number: 3
+      time_period:
+        start: 1837
+        end: 1838
+      scenes:
+        -
+          scene_number: 28
+          location_type: EXT
+          time: MH
+          location: GAMLA STAN
+          shots:
+            -
+              shot_number: 56
+              timecode:
+                in: "00:02:38,720"
+                out: "00:02:40,480"
+              specific_area: STREET
+              camera_movement:
+                speed: SLOW & SMOOTH
+                type: DOLLY-SIDE
+              angle: CU
+              description: "Wheels of the carriage on cobble stone"
+            -
+              shot_number: 57
+              timecode:
+                in: "00:02:40,480"
+                out: "00:02:42,160"
+              specific_area: null
+              camera_movement:
+                speed: STATIC
+                type: LOCKED
+              angle: MWS
+              description: "A jewish family are stepping out from the their horse and carriage"
+            -
+              shot_number: 58
+              timecode:
+                in: "00:02:42,160"
+                out: "00:02:44,480"
+              specific_area: null
+              camera_movement:
+                speed: SLOW & SMOOTH
+                type: DOLLY-IN
+              angle: "MS "
+              description: "A dirty Swedish Man carrying a sack over his back blänger"
+            -
+              shot_number: 59
+              timecode:
+                in: "00:02:44,480"
+                out: "00:02:47,040"
+              specific_area: null
+              camera_movement:
+                speed: STATIC
+                type: LOCKED
+              angle: "MS "
+              description: "Two Swedish ladies whisper"
+        -
+          scene_number: 29
+          location_type: INT
+          time: DAY
+          location: PRINTING HOUSE
+          shots:
+            -
+              shot_number: 60
+              timecode:
+                in: "00:02:47,040"
+                out: "00:02:49,880"
+              specific_area: PRINTING HALL
+              camera_movement:
+                speed: SLOW & SMOOTH
+                type: DOLLY-IN
+              angle: "MS "
+              description: "Big printing press coming down on the paper"
+        -
+          scene_number: 30
+          location_type: INT
+          time: DAY
+          location: UPPER CLASS HOME
+          shots:
+            -
+              shot_number: 61
+              timecode:
+                in: "00:02:49,880"
+                out: "00:02:52,560"
+              specific_area: KITCHEN
+              camera_movement:
+                speed: SLOW & SMOOTH
+                type: DOLLY-IN
+              angle: MCU
+              description: "Older Swedish man looking over his glasses as he read the new paper"
+        -
+          scene_number: 31
+          location_type: EXT
+          time: MH
+          location: GAMLA STAN
+          shots:
+            -
+              shot_number: 62
+              timecode:
+                in: "00:02:52,560"
+                out: "00:02:55,520"
+              specific_area: STORTORGET
+              camera_movement:
+                speed: SLOW & SMOOTH
+                type: CRANE-IN
+              angle: CRANE
+              description: " crowd gathering at Järntorget"
+            -
+              shot_number: 63
+              timecode:
+                in: "00:02:55,520"
+                out: "00:02:56,960"
+              specific_area: null
+              camera_movement:
+                speed: STEADY
+                type: HANDHELD
+              angle: CU
+              description: " on the face of a ungly Swedish woman, behind her we see a crowd of people"
+            -
+              shot_number: 64
+              timecode:
+                in: "00:02:56,960"
+                out: "00:02:58,200"
+              specific_area: null
+              camera_movement:
+                speed: STEADY
+                type: HANDHELD
+              angle: "MS "
+              description: "Young Swedish man in his 20s stnading on a apple box, talkng to a small crowd"
+        -
+          scene_number: 32
+          location_type: EXT
+          time: MH
+          location: GAMLA STAN
+          shots:
+            -
+              shot_number: 65
+              timecode:
+                in: "00:02:58,200"
+                out: "00:02:59,440"
+              specific_area: STREET
+              camera_movement:
+                speed: SLOW & SMOOTH
+                type: CRANE-OUT
+              angle: CRANE
+              description: "Crowd walks through gamla stan protesting"
+        -
+          scene_number: 33
+          location_type: EXT
+          time: MH
+          location: GAMLA STAN
+          shots:
+            -
+              shot_number: 66
+              timecode:
+                in: "00:02:59,440"
+                out: "00:03:00,920"
+              specific_area: JÄRNTORGET
+              camera_movement:
+                speed: SLOW & SMOOTH
+                type: CRANE-IN
+              angle: WS
+              description: "crowd standing ifront of a fancy home, throwing stone, vegtibles and "
+            -
+              shot_number: 67
+              timecode:
+                in: "00:03:00,920"
+                out: "00:03:01,960"
+              specific_area: null
+              camera_movement:
+                speed: STEADY
+                type: HANDHELD
+              angle: CU
+              description: ", fish-eye on a the angy Swedish man, crowd chanting behind him"
+            -
+              shot_number: 68
+              timecode:
+                in: "00:03:01,960"
+                out: "00:03:03,480"
+              specific_area: null
+              camera_movement:
+                speed: STEADY
+                type: HANDHELD
+              angle: CU
+              description: ", fish-eye on a the angy ugly Swedish woman, crowd chanting behind her"
+            -
+              shot_number: 69
+              timecode:
+                in: "00:03:03,480"
+                out: "00:03:04,840"
+              specific_area: null
+              camera_movement:
+                speed: STEADY
+                type: HANDHELD
+              angle: MCU
+              description: "Over the should of young woman watching the crowd through her window"
+            -
+              shot_number: 70
+              timecode:
+                in: "00:03:04,840"
+                out: "00:03:07,600"
+              specific_area: null
+              camera_movement:
+                speed: STATIC
+                type: LOCKED
+              angle: CU
+              description: " of Jewish woman's face, tears in her eyes"
+            -
+              shot_number: 71
+              timecode:
+                in: "00:03:07,600"
+                out: "00:03:08,960"
+              specific_area: null
+              camera_movement:
+                speed: STATIC
+                type: LOCKED
+              angle: CU
+              description: "Cut to black"
+        -
+          scene_number: 34
+          location_type: INT
+          time: DAY
+          location: BOOK STORE
+          shots:
+            -
+              shot_number: 72
+              timecode:
+                in: "00:03:08,960"
+                out: "00:03:10,880"
+              specific_area: MAIN ROOM
+              camera_movement:
+                speed: STEADY
+                type: HANDHELD
+              angle: CU
+              description: " up of broom Sweeping up chards of glass, among the debrie,a jewish family photo"
+            -
+              shot_number: 73
+              timecode:
+                in: "00:03:10,880"
+                out: "00:03:15,400"
+              specific_area: null
+              camera_movement:
+                speed: STEADY
+                type: HANDHELD
+              angle: "CU "
+              description: "of hand picking up the family photo"
+            -
+              shot_number: 74
+              timecode:
+                in: "00:03:15,400"
+                out: "00:03:18,000"
+              specific_area: null
+              camera_movement:
+                speed: STEADY
+                type: HANDHELD
+              angle: CU
+              description: "Jewish orlder man looks down at the picture start to cry"
+    -
+      epoch_number: 4
+      time_period:
+        start: 1838
+        end: 1870
+      scenes:
+        -
+          scene_number: 35
+          location_type: INT
+          time: DAY
+          location: RESIDENTIAL BUILDING
+          shots:
+            -
+              shot_number: 75
+              timecode:
+                in: "00:03:18,000"
+                out: "00:03:20,720"
+              specific_area: BACKYARD
+              camera_movement:
+                speed: STEADY
+                type: HANDHELD
+              angle: MWS
+              description: "Woman washing clothes"
+        -
+          scene_number: 36
+          location_type: INT
+          time: DAY
+          location: VILLA
+          shots:
+            -
+              shot_number: 76
+              timecode:
+                in: "00:03:20,720"
+                out: "00:03:23,240"
+              specific_area: DRAWING ROOM
+              camera_movement:
+                speed: SLOW & SMOOTH
+                type: DOLLY-IN
+              angle: MWS
+              description: "A richly decorated  in an aristocratic or bourgeois home. Participants: Well-dressed men and women—liberal reformers, conservative nobles, a clergyman, and a Jewish intellectual."
+        -
+          scene_number: 37
+          location_type: INT
+          time: DAY
+          location: BOHEMIAM CAFE
+          shots:
+            -
+              shot_number: 77
+              timecode:
+                in: "00:03:23,240"
+                out: "00:03:26,120"
+              specific_area: MAIN ROOM
+              camera_movement:
+                speed: SLOW & SMOOTH
+                type: DOLLY-IN
+              angle: MWS
+              description: "Swedish bohemian intelelctual sitting at a cafe talking"
+        -
+          scene_number: 38
+          location_type: INT
+          time: DAY
+          location: SWEDISH PARLAMENT
+          shots:
+            -
+              shot_number: 78
+              timecode:
+                in: "00:03:26,120"
+                out: "00:03:27,800"
+              specific_area: RIKSDAGENS KAMMARE
+              camera_movement:
+                speed: STATIC
+                type: LOCKED
+              angle: WS
+              description: "Swedish parlament in 1870"
+            -
+              shot_number: 79
+              timecode:
+                in: "00:03:27,800"
+                out: "00:03:29,760"
+              specific_area: null
+              camera_movement:
+                speed: SLOW & SMOOTH
+                type: DOLLY-IN
+              angle: "MS "
+              description: "of Swedish parlament"
+            -
+              shot_number: 80
+              timecode:
+                in: "00:03:29,760"
+                out: "00:03:31,640"
+              specific_area: null
+              camera_movement:
+                speed: SLOW & SMOOTH
+                type: DOLLY-IN
+              angle: MCU
+              description: "Parlament clerk reads out new bill "
+        -
+          scene_number: 39
+          location_type: EXT
+          time: null
+          location: CONSTRUCTION SITE
+          shots:
+            -
+              shot_number: 81
+              timecode:
+                in: "00:03:31,640"
+                out: "00:03:34,440"
+              specific_area: PIT
+              camera_movement:
+                speed: SLOW & SMOOTH
+                type: CRANE-IN
+              angle: CRANE
+              description: "Construcction on the Grand Synagoge of Stockolm"
+            -
+              shot_number: 82
+              timecode:
+                in: "00:03:34,440"
+                out: "00:03:36,720"
+              specific_area: HALF BUILT
+              camera_movement:
+                speed: SLOW & SMOOTH
+                type: DOLLY-IN
+              angle: FS
+              description: "Construcction on the Grand Synagoge of Stockolm"
+        -
+          scene_number: 40
+          location_type: EXT
+          time: BH
+          location: GRAND SYNAGOGE OF STOCKOLM
+          shots:
+            -
+              shot_number: 83
+              timecode:
+                in: "00:03:36,720"
+                out: "00:03:40,000"
+              specific_area: STREET
+              camera_movement:
+                speed: SLOW & SMOOTH
+                type: CRANE
+              angle: CRANE
+              description: "of Grand Synagoge, crowd are standing outsude, horse and carriage with dignitaries are lined up along the street, a well dressed man steps out of his carrias. "
+        -
+          scene_number: 41
+          location_type: INT
+          time: NIGHT
+          location: GRAND SYNAGOGE OF STOCKOLM
+          shots:
+            -
+              shot_number: 84
+              timecode:
+                in: "00:03:40,000"
+                out: "00:03:46,760"
+              specific_area: MAIN HALL
+              camera_movement:
+                speed: SLOW & SMOOTH
+                type: DOLLY-IN
+              angle: FS
+              description: "Oscar II enter the room and looks around"
+            -
+              shot_number: 85
+              timecode:
+                in: "00:03:46,760"
+                out: "00:03:49,640"
+              specific_area: null
+              camera_movement:
+                speed: SLOW & SMOOTH
+                type: DOLLY-IN
+              angle: CU
+              description: "on the face of a jewsih woman, teary eyed looking dwon at the king"
+            -
+              shot_number: 86
+              timecode:
+                in: "00:03:49,640"
+                out: "00:03:51,840"
+              specific_area: null
+              camera_movement:
+                speed: SLOW & SMOOTH
+                type: DOLLY-SIDE
+              angle: "MS "
+              description: "Dolly shot, left right, tracking the king as he walks down the ile. "
+            -
+              shot_number: 87
+              timecode:
+                in: "00:03:51,840"
+                out: "00:03:55,600"
+              specific_area: null
+              camera_movement:
+                speed: SLOW & SMOOTH
+                type: DOLLY-IN
+              angle: MCU
+              description: "Dolly in on the face of a jewish man"
+    -
+      epoch_number: 5
+      time_period:
+        start: 1870
+        end: 1933
+      scenes:
+        -
+          scene_number: 42
+          location_type: INT
+          time: NIGHT¨
+          location: AFFLUENT HOME
+          shots:
+            -
+              shot_number: 88
+              timecode:
+                in: "00:03:55,600"
+                out: "00:03:59,640"
+              specific_area: DINING HALL
+              camera_movement:
+                speed: STEADY
+                type: HANDHELD
+              angle: "MS "
+              description: "We follow serveant walking into a dinner room where a jewish family is waiting"
+            -
+              shot_number: 89
+              timecode:
+                in: "00:03:59,640"
+                out: "00:04:03,560"
+              specific_area: null
+              camera_movement:
+                speed: SLOW & SMOOTH
+                type: DOLLY-OUT
+              angle: MWS
+              description: "Home of an aristocratic Jewish family. Stiff Jewish dinner"
+        -
+          scene_number: 43
+          location_type: EXT
+          time: MH
+          location: GAMLA STAN
+          shots:
+            -
+              shot_number: 90
+              timecode:
+                in: "00:04:03,560"
+                out: "00:04:06,840"
+              specific_area: DOCKS
+              camera_movement:
+                speed: SLOW & SMOOTH
+                type: PARALAX
+              angle: CRANE
+              description: "Drone shot of a sailing boat pulling up to the dock. "
+            -
+              shot_number: 91
+              timecode:
+                in: "00:04:06,840"
+                out: "00:04:09,800"
+              specific_area: null
+              camera_movement:
+                speed: STEADY
+                type: HANDHELD
+              angle: "CU "
+              description: "of a sailign fastening the rope to the dock. "
+            -
+              shot_number: 92
+              timecode:
+                in: "00:04:09,800"
+                out: "00:04:13,360"
+              specific_area: null
+              camera_movement:
+                speed: STEADY
+                type: HANDHELD
+              angle: MWS
+              description: "A rag tag jewish family comes off the boat in rags"
+        -
+          scene_number: 44
+          location_type: EXT
+          time: MH
+          location: SÖDERMALM
+          shots:
+            -
+              shot_number: 93
+              timecode:
+                in: "00:04:13,360"
+                out: "00:04:16,000"
+              specific_area: STREET
+              camera_movement:
+                speed: STEADY
+                type: HANDHELD
+              angle: MWS
+              description: "Polosh Jewish men walking to Grand Synagoe with bobles aand tallit under their arms"
+        -
+          scene_number: 45
+          location_type: INT
+          time: DAY
+          location: GRAND SYNAGOGE OF STOCKOLM
+          shots:
+            -
+              shot_number: 94
+              timecode:
+                in: "00:04:16,000"
+                out: "00:04:19,040"
+              specific_area: MAIN HALL
+              camera_movement:
+                speed: STEADY
+                type: HANDHELD
+              angle: "MS "
+              description: " frontal shot from service at european synagogue, we are facing two jewish praying, to the right a rugged polish Jew in his 50's, he has a large tallit, or praying shal over him and he looks down into a siddur that he is hold with both hands, on his face a large unkempt beared.  Next to the polish Jew is a  German jew in his 50's, well groomed, chubby,  backslick hair, clean shaven, yamaka on his head,  sitting down reading a pamphlet  through his  monocle. "
+            -
+              shot_number: 95
+              timecode:
+                in: "00:04:19,040"
+                out: "00:04:22,400"
+              specific_area: null
+              camera_movement:
+                speed: STEADY
+                type: HANDHELD
+              angle: CU
+              description: "The  German jew side eyes the Polish jew  praying"
+        -
+          scene_number: 46
+          location_type: EXT
+          time: MH
+          location: SÖDERMALM
+          shots:
+            -
+              shot_number: 96
+              timecode:
+                in: "00:04:22,400"
+                out: "00:04:27,800"
+              specific_area: NYTORGET
+              camera_movement:
+                speed: SLOW & SMOOTH
+                type: CRANE-IN
+              angle: CRANE
+              description: "Crane shot of a buzzling market on Södermalm"
+            -
+              shot_number: 97
+              timecode:
+                in: "00:04:27,800"
+                out: "00:04:31,880"
+              specific_area: null
+              camera_movement:
+                speed: STATIC
+                type: LOCKED
+              angle: "MS "
+              description: "At a buzzling market, two beared Jewish men in passionate discussion"
+            -
+              shot_number: 98
+              timecode:
+                in: "00:04:31,880"
+                out: "00:04:34,440"
+              specific_area: HORNSGATAN
+              camera_movement:
+                speed: STATIC
+                type: LOCKED
+              angle: MWS
+              description: "Jewish men walking thoruhg busy street in Söder, passionatly discussiong"
+        -
+          scene_number: 47
+          location_type: EXT
+          time: MH
+          location: SÖDERMALM
+          shots:
+            -
+              shot_number: 99
+              timecode:
+                in: "00:04:34,440"
+                out: "00:04:37,200"
+              specific_area: ST.PAULSGATAN
+              camera_movement:
+                speed: SLOW & SMOOTH
+                type: DOLLY-IN
+              angle: WS
+              description: "Messy street st pauls gatan, jewish men enter building"
+        -
+          scene_number: 48
+          location_type: INT
+          time: DAY
+          location: SMALL SYNAGOGE
+          shots:
+            -
+              shot_number: 100
+              timecode:
+                in: "00:04:37,200"
+                out: "00:04:39,720"
+              specific_area: MAIN ROOM
+              camera_movement:
+                speed: SLOW & SMOOTH
+                type: PAN
+              angle: MWS
+              description: "Jewish men praying in Adat Jissrael"
+            -
+              shot_number: 101
+              timecode:
+                in: "00:04:39,720"
+                out: "00:04:41,960"
+              specific_area: null
+              camera_movement:
+                speed: SLOW & SMOOTH
+                type: DOLLY-IN
+              angle: MWS
+              description: "Dolly in on two men arguing in shuul,"
+            -
+              shot_number: 102
+              timecode:
+                in: "00:04:41,960"
+                out: "00:04:44,240"
+              specific_area: null
+              camera_movement:
+                speed: SLOW & SMOOTH
+                type: DOLLY-IN
+              angle: "MS "
+              description: "one steps away revealing the Palestine power behind him. "
+            -
+              shot_number: 103
+              timecode:
+                in: "00:04:44,240"
+                out: "00:04:47,080"
+              specific_area: null
+              camera_movement:
+                speed: SLOW & SMOOTH
+                type: DOLLY-IN
+              angle: MCU
+              description: "A young boy places  coins in tin box"
+        -
+          scene_number: 49
+          location_type: INT
+          time: DAY
+          location: FAMILY HOME
+          shots:
+            -
+              shot_number: 104
+              timecode:
+                in: "00:04:47,080"
+                out: "00:04:49,160"
+              specific_area: DINNER TABLE
+              camera_movement:
+                speed: SLOW & SMOOTH
+                type: DOLLY-IN
+              angle: FS
+              description: " of seder dinner"
+            -
+              shot_number: 105
+              timecode:
+                in: "00:04:49,160"
+                out: "00:04:50,840"
+              specific_area: null
+              camera_movement:
+                speed: STATIC
+                type: LOCKED
+              angle: MCU
+              description: "of Grandpa raises his glass"
+            -
+              shot_number: 106
+              timecode:
+                in: "00:04:50,840"
+                out: "00:04:52,360"
+              specific_area: null
+              camera_movement:
+                speed: STATIC
+                type: LOCKED
+              angle: MWS
+              description: "Everyone raises their glass"
+            -
+              shot_number: 107
+              timecode:
+                in: "00:04:52,360"
+                out: "00:04:54,480"
+              specific_area: null
+              camera_movement:
+                speed: SLOW & SMOOTH
+                type: DOLLY-IN
+              angle: "CU "
+              description: "of Herzel on the wall"
+    -
+      epoch_number: 6
+      time_period:
+        start: 1933
+        end: 1945
+      scenes:
+        -
+          scene_number: 50
+          location_type: EXT
+          time: MH
+          location: WORKING CLASS RESIDENCE
+          shots:
+            -
+              shot_number: 108
+              timecode:
+                in: "00:04:54,480"
+                out: "00:04:55,920"
+              specific_area: BACKYARD
+              camera_movement:
+                speed: STATIC
+                type: LOCKED
+              angle: CU
+              description: "Bride"
+            -
+              shot_number: 109
+              timecode:
+                in: "00:04:55,920"
+                out: "00:04:57,280"
+              specific_area: null
+              camera_movement:
+                speed: STATIC
+                type: LOCKED
+              angle: CU
+              description: "Groom"
+            -
+              shot_number: 110
+              timecode:
+                in: "00:04:57,280"
+                out: "00:04:58,040"
+              specific_area: null
+              camera_movement:
+                speed: SLOW & SMOOTH
+                type: DOLLY-IN
+              angle: CU
+              description: "Close up on foot stomping glass"
+            -
+              shot_number: 111
+              timecode:
+                in: "00:04:58,040"
+                out: "00:04:59,200"
+              specific_area: null
+              camera_movement:
+                speed: SLOW & SMOOTH
+                type: CRANE-SIDE
+              angle: CRANE
+              description: "The wedding gusts rejoicing"
+        -
+          scene_number: 51
+          location_type: EXT
+          time: MH
+          location: TRAIN STATION
+          shots:
+            -
+              shot_number: 112
+              timecode:
+                in: "00:04:59,200"
+                out: "00:05:01,960"
+              specific_area: PLATFORM
+              camera_movement:
+                speed: SLOW & SMOOTH
+                type: DOLLY-OUT
+              angle: "MS "
+              description: "Couple waving to their family"
+            -
+              shot_number: 113
+              timecode:
+                in: "00:05:01,960"
+                out: "00:05:04,200"
+              specific_area: null
+              camera_movement:
+                speed: SLOW & SMOOTH
+                type: DOLLY-IN
+              angle: MCU
+              description: "Jewish mothers crying waving"
+            -
+              shot_number: 114
+              timecode:
+                in: "00:05:04,200"
+                out: "00:05:08,680"
+              specific_area: null
+              camera_movement:
+                speed: SLOW & SMOOTH
+                type: CRANE-OUT
+              angle: WS
+              description: "of train leaving the station"
+            -
+              shot_number: 115
+              timecode:
+                in: "00:05:08,680"
+                out: "00:05:14,920"
+              specific_area: null
+              camera_movement:
+                speed: SLOW & SMOOTH
+                type: DOLLY-IN
+              angle: MWS
+              description: "Dolly in on newspaper stand and the headlnes \"Hitler tar makten i Tyskland\""
+        -
+          scene_number: 52
+          location_type: EXT
+          time: BH
+          location: NUREMBERG
+          shots:
+            -
+              shot_number: 116
+              timecode:
+                in: "00:05:14,920"
+                out: "00:05:20,080"
+              specific_area: REICHSPARTEITAGSGELÄNDE
+              camera_movement:
+                speed: STEADY
+                type: HANDHELD
+              angle: MWS
+              description: "Follow hitler as he walks through a crowd"
+        -
+          scene_number: 53
+          location_type: EXT
+          time: MH
+          location: STOCKHOLM
+          shots:
+            -
+              shot_number: 117
+              timecode:
+                in: "00:05:20,080"
+                out: "00:05:22,400"
+              specific_area: NORRMALMSTORG
+              camera_movement:
+                speed: STEADY
+                type: HANDHELD
+              angle: WS
+              description: "Nazistmanifestation på ett torg i Stockholm"
+            -
+              shot_number: 118
+              timecode:
+                in: "00:05:22,400"
+                out: "00:05:24,320"
+              specific_area: null
+              camera_movement:
+                speed: SLOW & SMOOTH
+                type: DOLLY-IN
+              angle: "CU "
+              description: "på en judisk man"
+        -
+          scene_number: 54
+          location_type: EXT
+          time: MH
+          location: FRANCE
+          shots:
+            -
+              shot_number: 119
+              timecode:
+                in: "00:05:24,320"
+                out: "00:05:27,920"
+              specific_area: CEAN
+              camera_movement:
+                speed: SLOW & SMOOTH
+                type: CRANE
+              angle: WS
+              description: "German tanks and soldiers march through the devestatd village, smoke and broken buildings"
+        -
+          scene_number: 55
+          location_type: EXT
+          time: MH
+          location: LONDON
+          shots:
+            -
+              shot_number: 120
+              timecode:
+                in: "00:05:27,920"
+                out: "00:05:27,960"
+              specific_area: FLYING OVER
+              camera_movement:
+                speed: SLOW & SMOOTH
+                type: DRONE
+              angle: TS
+              description: "of German war planes dropping bombs on London"
+        -
+          scene_number: 56
+          location_type: INT
+          time: DAY
+          location: GERMAN BOMB FACTORY
+          shots:
+            -
+              shot_number: 121
+              timecode:
+                in: "00:05:27,960"
+                out: "00:05:30,760"
+              specific_area: MAIN HALL
+              camera_movement:
+                speed: SLOW & SMOOTH
+                type: CRANE
+              angle: FS
+              description: "Bomb factory in German conveyer belt"
+        -
+          scene_number: 57
+          location_type: EXT
+          time: MH
+          location: LONDON
+          shots:
+            -
+              shot_number: 122
+              timecode:
+                in: "00:05:30,760"
+                out: "00:05:34,280"
+              specific_area: AIR
+              camera_movement:
+                speed: SLOW & SMOOTH
+                type: DRONE
+              angle: TS
+              description: "Top shot of German war planes dropping bombs on London"
+        -
+          scene_number: 58
+          location_type: INT
+          time: NIGHT
+          location: SWEDISH PARLAMENT
+          shots:
+            -
+              shot_number: 123
+              timecode:
+                in: "00:05:34,280"
+                out: "00:05:38,680"
+              specific_area: RIKSDAGENS KAMMARE
+              camera_movement:
+                speed: SLOW & SMOOTH
+                type: CRANE
+              angle: WS
+              description: "Swedish Parlament debate"
+        -
+          scene_number: 59
+          location_type: INT
+          time: NIGHT
+          location: ROSENBAD
+          shots:
+            -
+              shot_number: 124
+              timecode:
+                in: "00:05:38,680"
+                out: "00:05:41,520"
+              specific_area: OFFICE
+              camera_movement:
+                speed: SLOW & SMOOTH
+                type: DOLLY-IN
+              angle: MCU
+              description: "Split shot of Swedihs and German officials on the phone"
+        -
+          scene_number: 60
+          location_type: INT
+          time: NIGHT
+          location: AUSWÄRTIGES AMT
+          shots:
+            -
+              shot_number: 125
+              timecode:
+                in: "00:05:41,520"
+                out: "00:05:44,400"
+              specific_area: OFFICE
+              camera_movement:
+                speed: SLOW & SMOOTH
+                type: DOLLY-IN
+              angle: MCU
+              description: "Nazi general reading a letter"
+        -
+          scene_number: 61
+          location_type: EXT
+          time: DAY
+          location: SWEDISH HARBOR
+          shots:
+            -
+              shot_number: 126
+              timecode:
+                in: "00:05:44,400"
+                out: "00:05:46,320"
+              specific_area: SWEDISH CUSTOMS
+              camera_movement:
+                speed: SLOW & SMOOTH
+                type: DOLLY-IN
+              angle: MCU
+              description: "OVer the shoulder from Sweden border crossign agent, Jewish young couple looks nervously at him. "
+            -
+              shot_number: 127
+              timecode:
+                in: "00:05:46,320"
+                out: "00:05:48,120"
+              specific_area: null
+              camera_movement:
+                speed: STATIC
+                type: LOCKED
+              angle: MCU
+              description: "Swedish border agent shakes his head. "
+            -
+              shot_number: 128
+              timecode:
+                in: "00:05:48,120"
+                out: "00:05:49,680"
+              specific_area: null
+              camera_movement:
+                speed: STATIC
+                type: LOCKED
+              angle: MCU
+              description: "Swedish police man steps in "
+            -
+              shot_number: 129
+              timecode:
+                in: "00:05:49,680"
+                out: "00:05:53,080"
+              specific_area: null
+              camera_movement:
+                speed: SLOW & SMOOTH
+                type: DOLLY-OUT
+              angle: "MS "
+              description: "Jewish couple walks, flanked by two Swedish police men"
+        -
+          scene_number: 62
+          location_type: INT
+          time: DAY
+          location: APARTMENT
+          shots:
+            -
+              shot_number: 130
+              timecode:
+                in: "00:05:53,080"
+                out: "00:05:57,400"
+              specific_area: WINDOW
+              camera_movement:
+                speed: SLOW & SMOOTH
+                type: DOLLY-IN
+              angle: "MS "
+              description: "Blond woman looks outside as soliders march by"
+        -
+          scene_number: 63
+          location_type: EXT
+          time: DAY
+          location: COPENHAGEN
+          shots:
+            -
+              shot_number: 131
+              timecode:
+                in: "00:05:57,400"
+                out: "00:06:00,880"
+              specific_area: FROM AIR
+              camera_movement:
+                speed: SLOW & SMOOTH
+                type: DRONE
+              angle: WS
+              description: "Fly over 1940's Copenhagen"
+        -
+          scene_number: 64
+          location_type: EXT
+          time: MH
+          location: COPENHAGEN
+          shots:
+            -
+              shot_number: 132
+              timecode:
+                in: "00:06:00,880"
+                out: "00:06:05,400"
+              specific_area: STREET
+              camera_movement:
+                speed: STEADY
+                type: HANDHELD
+              angle: "MS "
+              description: "Nazi leutenaant leads a squadron down the street. He looks at his papers and points to the soilders to enter a residential building. "
+        -
+          scene_number: 65
+          location_type: INT
+          time: BH
+          location: OFFICE BUILDING
+          shots:
+            -
+              shot_number: 133
+              timecode:
+                in: "00:06:05,400"
+                out: "00:06:08,600"
+              specific_area: OFFICE
+              camera_movement:
+                speed: SLOW & SMOOTH
+                type: DOLLY-IN
+              angle: MCU
+              description: "Swedish official on the phone"
+        -
+          scene_number: 66
+          location_type: INT
+          time: DAY
+          location: OFFICE SPACE
+          shots:
+            -
+              shot_number: 134
+              timecode:
+                in: "00:06:08,600"
+                out: "00:06:13,000"
+              specific_area: OFFICE
+              camera_movement:
+                speed: SLOW & SMOOTH
+                type: DOLLY-IN
+              angle: MCU
+              description: "Danish official on the phone, takes notes"
+            -
+              shot_number: 135
+              timecode:
+                in: "00:06:13,000"
+                out: "00:06:14,640"
+              specific_area: null
+              camera_movement:
+                speed: SLOW & SMOOTH
+                type: DOLLY-IN
+              angle: "CU "
+              description: " of phone being hung up"
+            -
+              shot_number: 136
+              timecode:
+                in: "00:06:14,640"
+                out: "00:06:16,720"
+              specific_area: null
+              camera_movement:
+                speed: SLOW & SMOOTH
+                type: DOLLY-IN
+              angle: "CU "
+              description: "Danish offical face. Thinking then looking up knodding. "
+            -
+              shot_number: 137
+              timecode:
+                in: "00:06:16,720"
+                out: "00:06:18,960"
+              specific_area: null
+              camera_movement:
+                speed: STATIC
+                type: LOCKED
+              angle: MWS
+              description: "Another man in across the room leaves the office"
+        -
+          scene_number: 67
+          location_type: INT
+          time: NIGHT
+          location: DANISH KING'S PALACE
+          shots:
+            -
+              shot_number: 138
+              timecode:
+                in: "00:06:18,960"
+                out: "00:06:21,280"
+              specific_area: KING'S OFFICE
+              camera_movement:
+                speed: SLOW & SMOOTH
+                type: DOLLY-IN
+              angle: "MS "
+              description: "The danish king in his office on the phone"
+        -
+          scene_number: 68
+          location_type: EXT
+          time: MH
+          location: FISHING BOAT
+          shots:
+            -
+              shot_number: 139
+              timecode:
+                in: "00:06:21,280"
+                out: "00:06:23,600"
+              specific_area: PILOT HOUSE
+              camera_movement:
+                speed: STATIC
+                type: LOCKED
+              angle: "CU "
+              description: "Captain of a danish fishing boat as he stairs the ship"
+            -
+              shot_number: 140
+              timecode:
+                in: "00:06:23,600"
+                out: "00:06:26,280"
+              specific_area: BULWARK
+              camera_movement:
+                speed: STATIC
+                type: LOCKED
+              angle: MCU
+              description: " jewish hurdled up against the realing of the boat clutching her boy and girl . "
+            -
+              shot_number: 141
+              timecode:
+                in: "00:06:26,280"
+                out: "00:06:28,360"
+              specific_area: null
+              camera_movement:
+                speed: STATIC
+                type: LOCKED
+              angle: WS
+              description: "Wide shot of Jewish regufees sitting in the boat. "
+        -
+          scene_number: 68.5
+          location_type: EXT
+          time: MH
+          location: ÖRESUND SOUND
+          shots:
+            -
+              shot_number: 142
+              timecode:
+                in: "00:06:28,360"
+                out: "00:06:31,560"
+              specific_area: FROM AIR
+              camera_movement:
+                speed: SLOW & SMOOTH
+                type: CRANE-IN
+              angle: CRANE
+              description: "Drone shot of a flotilla of fishing boats farrying across Öresund at sunset. "
+        -
+          scene_number: 69
+          location_type: EXT
+          time: MH
+          location: HELSINGBORG
+          shots:
+            -
+              shot_number: 143
+              timecode:
+                in: "00:06:31,560"
+                out: "00:06:37,640"
+              specific_area: RÅÅ VALLAR BEACH
+              camera_movement:
+                speed: SLOW & SMOOTH
+                type: DOLLY-IN
+              angle: FS
+              description: "Dolly in on the face of Swedish woman standing on the beach, looking out as the sunset, crowd standing behind her, cars parked behind them."
+        -
+          scene_number: 70
+          location_type: EXT
+          time: MH
+          location: WINTER FOREST
+          shots:
+            -
+              shot_number: 144
+              timecode:
+                in: "00:06:37,640"
+                out: "00:06:40,400"
+              specific_area: TRAIL
+              camera_movement:
+                speed: STEADY
+                type: HANDHELD
+              angle: MWS
+              description: "Handheld shot of a group of 10 people walkiing through the frozen forest. "
+            -
+              shot_number: 145
+              timecode:
+                in: "00:06:40,400"
+                out: "00:06:42,640"
+              specific_area: null
+              camera_movement:
+                speed: STEADY
+                type: HANDHELD
+              angle: "CU "
+              description: "on Sweish girl walking, stopping to carch her breath, then continue walking"
+            -
+              shot_number: 146
+              timecode:
+                in: "00:06:42,640"
+                out: "00:06:47,120"
+              specific_area: null
+              camera_movement:
+                speed: SLOW & SMOOTH
+                type: CRANE-OUT
+              angle: CRANE
+              description: "Crane shot of the peope walking, out of the forest and apporach a swedihs village in the distance"
+        -
+          scene_number: 71
+          location_type: EXT
+          time: MH
+          location: BUDABEST
+          shots:
+            -
+              shot_number: 147
+              timecode:
+                in: "00:06:47,120"
+                out: "00:06:48,680"
+              specific_area: FROM AIR
+              camera_movement:
+                speed: SLOW & SMOOTH
+                type: MOVE-IN
+              angle: DRONE
+              description: "Drone shot of Budapest"
+        -
+          scene_number: 72
+          location_type: EXT
+          time: MH
+          location: BUDAPEST
+          shots:
+            -
+              shot_number: 148
+              timecode:
+                in: "00:06:48,680"
+                out: "00:06:49,600"
+              specific_area: BUSY STREET
+              camera_movement:
+                speed: STEADY
+                type: HANDHELD
+              angle: "MS "
+              description: "Back of a man walking down street in Budapest"
+        -
+          scene_number: 73
+          location_type: INT
+          time: DAY
+          location: SWEDISH CONSOLATE IN BUDAPEST
+          shots:
+            -
+              shot_number: 149
+              timecode:
+                in: "00:06:49,600"
+                out: "00:06:50,680"
+              specific_area: BACK OFFICE
+              camera_movement:
+                speed: STATIC
+                type: LOCKED
+              angle: "XCU "
+              description: "CLose up for mechanism in typerwriter"
+            -
+              shot_number: 150
+              timecode:
+                in: "00:06:50,680"
+                out: "00:06:51,160"
+              specific_area: null
+              camera_movement:
+                speed: STATIC
+                type: LOCKED
+              angle: "XCU "
+              description: "Papers are being stamped"
+            -
+              shot_number: 151
+              timecode:
+                in: "00:06:51,160"
+                out: "00:06:51,720"
+              specific_area: null
+              camera_movement:
+                speed: STATIC
+                type: LOCKED
+              angle: "XCU "
+              description: "Papers are being foldeder"
+            -
+              shot_number: 152
+              timecode:
+                in: "00:06:51,720"
+                out: "00:06:52,720"
+              specific_area: null
+              camera_movement:
+                speed: STATIC
+                type: LOCKED
+              angle: "XCU "
+              description: "Paper is placed in an envelope "
+        -
+          scene_number: 74
+          location_type: INT
+          time: DAY
+          location: SWEDISH CONSOLATE IN BUDAPEST
+          shots:
+            -
+              shot_number: 153
+              timecode:
+                in: "00:06:52,720"
+                out: "00:06:56,120"
+              specific_area: RECEPTION
+              camera_movement:
+                speed: SLOW & SMOOTH
+                type: DOLLY-IN
+              angle: "MS "
+              description: "A hungarian Jewish family gets their papers handed to them. "
+            -
+              shot_number: 154
+              timecode:
+                in: "00:06:56,120"
+                out: "00:07:00,640"
+              specific_area: null
+              camera_movement:
+                speed: STATIC
+                type: LOCKED
+              angle: "MS "
+              description: "Montage of faces"
+        -
+          scene_number: 75
+          location_type: INT
+          time: DAY
+          location: SWEDISH CONSOLATE IN BUDAPEST
+          shots:
+            -
+              shot_number: 155
+              timecode:
+                in: "00:07:00,640"
+                out: "00:07:06,880"
+              specific_area: BACK OFFICE
+              camera_movement:
+                speed: SLOW & SMOOTH
+                type: DOLLY-IN
+              angle: "MS "
+              description: "From the backk we Paralax around man sitting at his desk, we reveal Raul Wellenberng"
+    -
+      epoch_number: 7
+      time_period:
+        start: 1945
+        end: 1969
+      scenes:
+        -
+          scene_number: 76
+          location_type: INT
+          time: DAY
+          location: KIOSK
+          shots:
+            -
+              shot_number: 156
+              timecode:
+                in: "00:07:06,880"
+                out: "00:07:08,480"
+              specific_area: MAIN ROOM
+              camera_movement:
+                speed: SLOW & SMOOTH
+                type: DOLLY-IN
+              angle: MWS
+              description: "Crowd in store is gathered arond a radio in store. "
+        -
+          scene_number: 75
+          location_type: EXT
+          time: MH
+          location: KONSERTHUSET
+          shots:
+            -
+              shot_number: 157
+              timecode:
+                in: "00:07:08,480"
+                out: "00:07:11,000"
+              specific_area: STAIRS
+              camera_movement:
+                speed: SLOW & SMOOTH
+                type: DOLLY-IN
+              angle: MCU
+              description: "Man readinng news paper that says \"Hitler Död\". Crowd of people is reading around him. "
+        -
+          scene_number: 76
+          location_type: EXT
+          time: MH
+          location: FOREST
+          shots:
+            -
+              shot_number: 158
+              timecode:
+                in: "00:07:11,000"
+                out: "00:07:15,160"
+              specific_area: COUNTRY ROAD
+              camera_movement:
+                speed: SLOW & SMOOTH
+                type: MOVE-IN
+              angle: CRANE
+              description: "Crane shot of a series of white red cross buses dringing along Swedish street at golden hour"
+        -
+          scene_number: 77
+          location_type: INT
+          time: GH
+          location: BUS
+          shots:
+            -
+              shot_number: 159
+              timecode:
+                in: "00:07:15,160"
+                out: "00:07:16,760"
+              specific_area: PASSENGER SEAT
+              camera_movement:
+                speed: STATIC
+                type: LOCKED
+              angle: MCU
+              description: "Holocust survor is sitting on the buss, looking out into theh swedish country side"
+        -
+          scene_number: 78
+          location_type: EXT
+          time: GH
+          location: MALMÖ
+          shots:
+            -
+              shot_number: 160
+              timecode:
+                in: "00:07:16,760"
+                out: "00:07:19,760"
+              specific_area: CENTRAL BUSSTATION
+              camera_movement:
+                speed: SLOW & SMOOTH
+                type: CRANE
+              angle: WS
+              description: "Crowd has gathered as buses park"
+            -
+              shot_number: 161
+              timecode:
+                in: "00:07:19,760"
+                out: "00:07:23,640"
+              specific_area: null
+              camera_movement:
+                speed: SLOW & SMOOTH
+                type: DOLLY-OUT
+              angle: "MS "
+              description: "a survivor that comes off buss and looks around"
+        -
+          scene_number: 79
+          location_type: INT
+          time: DAY
+          location: HOSPITAL
+          shots:
+            -
+              shot_number: 162
+              timecode:
+                in: "00:07:23,640"
+                out: "00:07:26,320"
+              specific_area: CANTINA
+              camera_movement:
+                speed: SLOW & SMOOTH
+                type: DOLLY-IN
+              angle: "MS "
+              description: "Jewish survivors eating in a catina"
+        -
+          scene_number: 80
+          location_type: EXT
+          time: DAY
+          location: MALMÖ HARBOR
+          shots:
+            -
+              shot_number: 163
+              timecode:
+                in: "00:07:26,320"
+                out: "00:07:28,360"
+              specific_area: GANGWAY
+              camera_movement:
+                speed: STATIC
+                type: LOCKED
+              angle: "MS "
+              description: "Ocver the shoulder of Swedish offical, Jewish man with a coat and hat, behind him is a line of peopel, bussling harbor, "
+            -
+              shot_number: 164
+              timecode:
+                in: "00:07:28,360"
+                out: "00:07:31,800"
+              specific_area: null
+              camera_movement:
+                speed: SLOW & SMOOTH
+                type: MOVE-IN
+              angle: "MS "
+              description: "Handheld shot following man in coat, hat, briefcase walking onboard ship"
+            -
+              shot_number: 165
+              timecode:
+                in: "00:07:31,800"
+                out: "00:07:34,720"
+              specific_area: DOCKS
+              camera_movement:
+                speed: STATIC
+                type: LOCKED
+              angle: "MS "
+              description: "Jewish group of friends at the dock waving"
+        -
+          scene_number: 81
+          location_type: EXT
+          time: MH
+          location: BUDPEST
+          shots:
+            -
+              shot_number: 166
+              timecode:
+                in: "00:07:34,720"
+                out: "00:07:38,520"
+              specific_area: SZÉNA SQUARE
+              camera_movement:
+                speed: STEADY
+                type: HANDHELD
+              angle: WS
+              description: "Soviet T-54 tanks bust through baaricades, a molotv cocktail is thrown at it. "
+        -
+          scene_number: 82
+          location_type: EXT
+          time: MH
+          location: BUDAPEST
+          shots:
+            -
+              shot_number: 167
+              timecode:
+                in: "00:07:38,520"
+                out: "00:07:40,760"
+              specific_area: TRAIN STATION
+              camera_movement:
+                speed: STEADY
+                type: HANDHELD
+              angle: MWS
+              description: "Family stepping off the train"
+        -
+          scene_number: 83
+          location_type: EXT
+          time: null
+          location: WARSAW
+          shots:
+            -
+              shot_number: 168
+              timecode:
+                in: "00:07:40,760"
+                out: "00:07:43,720"
+              specific_area: Congress Center
+              camera_movement:
+                speed: STEADY
+                type: HANDHELD
+              angle: WS
+              description: "Wide shot of a  crwod at a congress"
+            -
+              shot_number: 169
+              timecode:
+                in: "00:07:43,720"
+                out: "00:07:45,840"
+              specific_area: null
+              camera_movement:
+                speed: STEADY
+                type: HANDHELD
+              angle: CU
+              description: "Polish leader speaking"
+            -
+              shot_number: 170
+              timecode:
+                in: "00:07:45,840"
+                out: "00:07:50,800"
+              specific_area: null
+              camera_movement:
+                speed: SLOW & SMOOTH
+                type: PAN
+              angle: CRANE
+              description: "Pan over a crowd of angry demonstatror chanting, signs that read anti zionist slogans"
+        -
+          scene_number: 84
+          location_type: EXT
+          time: MH
+          location: WARSAW
+          shots:
+            -
+              shot_number: 171
+              timecode:
+                in: "00:07:50,800"
+                out: "00:07:53,600"
+              specific_area: STREET
+              camera_movement:
+                speed: STEADY
+                type: HANDHELD
+              angle: WS
+              description: "a family, husband, wife, two kids walking rapid with traveling bags, on a empty polish street. "
+        -
+          scene_number: 85
+          location_type: INT
+          time: DAY
+          location: SWEDISH SCHOOL
+          shots:
+            -
+              shot_number: 172
+              timecode:
+                in: "00:07:53,600"
+                out: "00:07:56,440"
+              specific_area: CLASSROOM
+              camera_movement:
+                speed: STATIC
+                type: LOCKED
+              angle: "MS "
+              description: "Face of Swedish children in class room, looking at Jewihs boy"
+            -
+              shot_number: 173
+              timecode:
+                in: "00:07:56,440"
+                out: "00:07:57,920"
+              specific_area: null
+              camera_movement:
+                speed: STATIC
+                type: LOCKED
+              angle: CU
+              description: "on face of Jewish boy"
+            -
+              shot_number: 174
+              timecode:
+                in: "00:07:57,920"
+                out: "00:07:59,760"
+              specific_area: null
+              camera_movement:
+                speed: STATIC
+                type: LOCKED
+              angle: WS
+              description: "of classroom, teacher by the board, Jewihs woman comes in with her son, Jewish boy. "
+    -
+      epoch_number: 8
+      time_period:
+        start: 2020
+        end: 2026
+      scenes:
+        -
+          scene_number: 86
+          location_type: EXT
+          time: MH
+          location: STOCKHOLM
+          shots:
+            -
+              shot_number: 175
+              timecode:
+                in: "00:07:59,760"
+                out: "00:08:04,360"
+              specific_area: FROM AIR
+              camera_movement:
+                speed: SLOW & SMOOTH
+                type: DOLLY-IN
+              angle: DRONE
+              description: "shots over Stockholm 2025"
+        -
+          scene_number: 87
+          location_type: EXT
+          time: DAY
+          location: STOCKHOLM
+          shots:
+            -
+              shot_number: 176
+              timecode:
+                in: "00:08:04,360"
+                out: "00:08:08,600"
+              specific_area: DROTTNINGGATAN
+              camera_movement:
+                speed: SLOW & SMOOTH
+                type: DRONE
+              angle: WS
+              description: "Drottinggatan "
+        -
+          scene_number: 88
+          location_type: INT
+          time: DAY
+          location: NORRMALM HOME
+          shots:
+            -
+              shot_number: 177
+              timecode:
+                in: "00:08:08,600"
+                out: "00:08:10,840"
+              specific_area: KITCHEN
+              camera_movement:
+                speed: SLOW & SMOOTH
+                type: DOLLY-IN
+              angle: MWS
+              description: "Jewish famliy lights candles"
+        -
+          scene_number: 89
+          location_type: INT
+          time: DAY
+          location: APARTMENT
+          shots:
+            -
+              shot_number: 178
+              timecode:
+                in: "00:08:10,840"
+                out: "00:08:12,920"
+              specific_area: LIVING ROOM
+              camera_movement:
+                speed: STATIC
+                type: LOCKED
+              angle: MWS
+              description: "We move in on a famil sitting watchng the a game. They burst out of their seat in jubilation. "
+        -
+          scene_number: 90
+          location_type: EXT
+          time: DAY
+          location: SWEDISH COUNTRY SIDE HOME
+          shots:
+            -
+              shot_number: 179
+              timecode:
+                in: "00:08:12,920"
+                out: "00:08:14,240"
+              specific_area: DECK
+              camera_movement:
+                speed: SLOW & SMOOTH
+                type: DOLLY-IN
+              angle: MWS
+              description: "Camera pans along midsommar bord"
+            -
+              shot_number: 180
+              timecode:
+                in: "00:08:14,240"
+                out: "00:08:17,680"
+              specific_area: null
+              camera_movement:
+                speed: SLOW & SMOOTH
+                type: DOLLY-IN
+              angle: CU
+              description: "of Jew at the midsommar table"
+        -
+          scene_number: 91
+          location_type: INT
+          time: DAY
+          location: SCHOOL 
+          shots:
+            -
+              shot_number: 181
+              timecode:
+                in: "00:08:17,680"
+                out: "00:08:19,800"
+              specific_area: CAFETERIA
+              camera_movement:
+                speed: SLOW & SMOOTH
+                type: DOLLY-IN
+              angle: "MS "
+              description: "Swedish girl standing with her platter in lunch room at a school, not knowing where to sit. "
+            -
+              shot_number: 182
+              timecode:
+                in: "00:08:19,800"
+                out: "00:08:21,400"
+              specific_area: null
+              camera_movement:
+                speed: STATIC
+                type: LOCKED
+              angle: FS
+              description: "Jewish girl gesturing to her to sit"
+            -
+              shot_number: 183
+              timecode:
+                in: "00:08:21,400"
+                out: "00:08:23,360"
+              specific_area: null
+              camera_movement:
+                speed: STATIC
+                type: LOCKED
+              angle: "MS "
+              description: "Jewish girl and Swedihs Girl talking"
+        -
+          scene_number: 92
+          location_type: INT
+          time: DAY
+          location: APARTMENT LOFT
+          shots:
+            -
+              shot_number: 184
+              timecode:
+                in: "00:08:23,360"
+                out: "00:08:25,360"
+              specific_area: LIVING ROOM
+              camera_movement:
+                speed: SLOW & SMOOTH
+                type: DOLLY-IN
+              angle: MCU
+              description: "of Jewish woman looking out the window. "
+            -
+              shot_number: 185
+              timecode:
+                in: "00:08:25,360"
+                out: "00:08:28,120"
+              specific_area: BEDROOM
+              camera_movement:
+                speed: STATIC
+                type: LOCKED
+              angle: MCU
+              description: "Boy is scrolling on his phone"
+        -
+          scene_number: 93
+          location_type: EXT
+          time: DAY
+          location: STOCKHOLM
+          shots:
+            -
+              shot_number: 186
+              timecode:
+                in: "00:08:28,120"
+                out: "00:08:32,240"
+              specific_area: STREET
+              camera_movement:
+                speed: STATIC
+                type: LOCKED
+              angle: CU
+              description: "Close up of Swedish girl looking into the camera with kafiyah"
+        -
+          scene_number: 94
+          location_type: INT
+          time: DAY
+          location: SCHOOL 
+          shots:
+            -
+              shot_number: 187
+              timecode:
+                in: "00:08:32,240"
+                out: "00:08:34,680"
+              specific_area: CLASSROOM
+              camera_movement:
+                speed: SLOW & SMOOTH
+                type: DOLLY-IN
+              angle: MWS
+              description: "Rabbi teaching Aleph Beth in Classroom"
+        -
+          scene_number: 95
+          location_type: INT
+          time: DAY
+          location: APARTMENT LOFT
+          shots:
+            -
+              shot_number: 188
+              timecode:
+                in: "00:08:34,680"
+                out: "00:08:36,760"
+              specific_area: KITCHEN
+              camera_movement:
+                speed: SLOW & SMOOTH
+                type: DOLLY-IN
+              angle: MWS
+              description: "Woman lighting candles"
+        -
+          scene_number: 96
+          location_type: INT
+          time: DAY
+          location: APARTMENT LOFT
+          shots:
+            -
+              shot_number: 189
+              timecode:
+                in: "00:08:36,760"
+                out: "00:08:39,680"
+              specific_area: LIVING ROOM
+              camera_movement:
+                speed: STATIC
+                type: LOCKED
+              angle: "MS "
+              description: "Father reading book to his two children"
+        -
+          scene_number: 97
+          location_type: EXT
+          time: DAY
+          location: BERZELI PARK
+          shots:
+            -
+              shot_number: 190
+              timecode:
+                in: "00:08:39,680"
+                out: "00:08:43,880"
+              specific_area: WALLENBERG MEMORIAL
+              camera_movement:
+                speed: STATIC
+                type: LOCKED
+              angle: MCU
+              description: "Flowers layed at the grave of Raul  Wallenberg"
+            -
+              shot_number: 191
+              timecode:
+                in: "00:08:43,880"
+                out: "00:08:49,400"
+              specific_area: null
+              camera_movement:
+                speed: SLOW & SMOOTH
+                type: DOLLY-OUT
+              angle: MWS
+              description: "Jewish father with son. Swedish father with sun standing by the grave of Raul Walleberg"
+        -
+          scene_number: 98
+          location_type: EXT
+          time: DAY
+          location: GREEN FOREST
+          shots:
+            -
+              shot_number: 192
+              timecode:
+                in: "00:08:49,400"
+                out: "00:08:54,320"
+              specific_area: TRAIL
+              camera_movement:
+                speed: STEADY
+                type: HANDHELD
+              angle: MWS
+              description: "A Jewish family hiking."
+        -
+          scene_number: 99
+          location_type: EXT
+          time: DAY
+          location: MOUNTAIN TOP
+          shots:
+            -
+              shot_number: 193
+              timecode:
+                in: "00:08:54,320"
+                out: "00:08:57,880"
+              specific_area: TRAIL
+              camera_movement:
+                speed: STEADY
+                type: HANDHELD
+              angle: MWS
+              description: "A Hewish family hiking. taking a break eating"
+```
