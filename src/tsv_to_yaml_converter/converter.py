@@ -306,17 +306,39 @@ class TSVToYAMLConverter:
         logger.info(f"  → {total_epochs} epochs, {total_scenes} scenes, {total_shots} shots")
 
     def _write_yaml_file(self, project: Project, output_file: Path) -> None:
-        """Write project data to YAML file."""
+        """Write project data to YAML file with custom formatting."""
+        # First, get the YAML as a string
+        yaml_content = yaml.dump(
+            {'project': project.model_dump(exclude_none=True)},
+            default_flow_style=False,
+            sort_keys=False,
+            allow_unicode=True,
+            indent=self.config.yaml_indent,
+            width=self.config.yaml_width
+        )
+        
+        # Add empty lines before epochs and shots
+        lines = yaml_content.split('\n')
+        formatted_lines = []
+        
+        for i, line in enumerate(lines):
+            # Add empty line before epoch_number
+            if '- epoch_number:' in line:
+                formatted_lines.append('')
+            
+            # Add empty line before scene_number
+            elif '- scene_number:' in line:
+                formatted_lines.append('')
+            
+            # Add empty line before shot_number
+            elif '- shot_number:' in line:
+                formatted_lines.append('')
+            
+            formatted_lines.append(line)
+        
+        # Write the formatted content
         with open(output_file, 'w', encoding='utf-8') as f:
-            yaml.dump(
-                {'project': project.model_dump(exclude_none=True)},
-                f,
-                default_flow_style=False,
-                sort_keys=False,
-                allow_unicode=True,
-                indent=self.config.yaml_indent,
-                width=self.config.yaml_width
-            )
+            f.write('\n'.join(formatted_lines))
     
     def analyze_files(self) -> Dict[str, Any]:
         """Analyze all TSV files in the input directory without processing them."""
