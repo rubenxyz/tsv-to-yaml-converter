@@ -2,7 +2,8 @@
 
 from datetime import datetime
 from pathlib import Path
-from typing import Dict, Any, List
+from typing import Any, Dict, List
+
 from loguru import logger
 
 
@@ -33,12 +34,12 @@ class FileManager:
 
     def find_tsv_files(self) -> List[Path]:
         """Find all TSV files in the input directory."""
-        return list(self.input_dir.rglob('*.tsv'))
+        return list(self.input_dir.rglob("*.tsv"))
 
     def get_output_path(self, tsv_file: Path, output_dir: Path) -> Path:
         """Determine output path for a TSV file."""
         relative_path = tsv_file.relative_to(self.input_dir)
-        output_path = output_dir / relative_path.with_suffix('.yaml')
+        output_path = output_dir / relative_path.with_suffix(".yaml")
 
         # Create output subdirectory if needed
         output_path.parent.mkdir(parents=True, exist_ok=True)
@@ -50,43 +51,46 @@ class FileManager:
         logger.info("Starting analysis mode...")
 
         analysis_results = {
-            'timestamp': datetime.now().isoformat(),
-            'input_directory': str(self.input_dir),
-            'files_found': [],
-            'total_files': 0,
-            'valid_tsv_files': 0,
-            'invalid_files': [],
-            'file_details': []
+            "timestamp": datetime.now().isoformat(),
+            "input_directory": str(self.input_dir),
+            "files_found": [],
+            "total_files": 0,
+            "valid_tsv_files": 0,
+            "invalid_files": [],
+            "file_details": [],
         }
 
         # Find all files in input directory
-        for file_path in self.input_dir.rglob('*'):
+        for file_path in self.input_dir.rglob("*"):
             if file_path.is_file():
-                analysis_results['total_files'] += 1
+                analysis_results["total_files"] += 1
                 file_info = {
-                    'path': str(file_path.relative_to(self.input_dir)),
-                    'size_bytes': file_path.stat().st_size,
-                    'modified': datetime.fromtimestamp(file_path.stat().st_mtime).isoformat(),
-                    'extension': file_path.suffix.lower()
+                    "path": str(file_path.relative_to(self.input_dir)),
+                    "size_bytes": file_path.stat().st_size,
+                    "modified": datetime.fromtimestamp(
+                        file_path.stat().st_mtime
+                    ).isoformat(),
+                    "extension": file_path.suffix.lower(),
                 }
 
                 # Check if it's a TSV file
-                if file_path.suffix.lower() == '.tsv':
-                    file_info['is_valid_tsv'] = True
-                    file_info['rows'] = 'Unknown'  # Will be filled by TSVReader
-                    file_info['columns'] = 'Unknown'  # Will be filled by TSVReader
-                    analysis_results['valid_tsv_files'] += 1
-                    analysis_results['files_found'].append(file_path.name)
+                if file_path.suffix.lower() == ".tsv":
+                    file_info["is_valid_tsv"] = True
+                    file_info["rows"] = "Unknown"  # Will be filled by TSVReader
+                    file_info["columns"] = "Unknown"  # Will be filled by TSVReader
+                    analysis_results["valid_tsv_files"] += 1
+                    analysis_results["files_found"].append(file_path.name)
                 else:
-                    file_info['is_valid_tsv'] = False
-                    file_info['error'] = 'Not a TSV file'
-                    analysis_results['invalid_files'].append({
-                        'file': file_path.name,
-                        'error': 'Not a TSV file'
-                    })
+                    file_info["is_valid_tsv"] = False
+                    file_info["error"] = "Not a TSV file"
+                    analysis_results["invalid_files"].append(
+                        {"file": file_path.name, "error": "Not a TSV file"}
+                    )
 
-                analysis_results['file_details'].append(file_info)
+                analysis_results["file_details"].append(file_info)
 
-        logger.info(f"Analysis complete: {analysis_results['total_files']} total files, {analysis_results['valid_tsv_files']} valid TSV files")
+        logger.info(
+            f"Analysis complete: {analysis_results['total_files']} total files, {analysis_results['valid_tsv_files']} valid TSV files"
+        )
 
         return analysis_results

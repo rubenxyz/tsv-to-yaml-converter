@@ -1,23 +1,40 @@
-"""Data processing functionality for converting TSV data to hierarchical structure."""
+"""Data processing functionality for TSV to YAML converter."""
 
 from typing import Dict, Any
 from loguru import logger
 
-from .models import Project, Epoch, Scene, Shot, ShotTimecode, CameraMovement, TimePeriod
+from .models import (
+    Project, Phase, Scene, Shot, ShotTimecode, CameraMovement, TimePeriod, Location
+)
 from .tsv_reader import TSVReader
 
 
 class DataProcessor:
-    """Processes TSV data into hierarchical structure."""
-
+    """Handles the transformation of TSV data into hierarchical structures and Pydantic models."""
+    
     def __init__(self, tsv_reader: TSVReader):
         """Initialize the data processor with a TSV reader."""
         self.tsv_reader = tsv_reader
-
+    
+    def _format_value(self, value: str, field_name: str) -> str:
+        """Format values based on field type."""
+        if not value:
+            return value
+        
+        # Apply sentence case and remove underscores for specific fields
+        if field_name in [
+            'location_name', 'specific_area', 'period', 'season', 'weather', 'speed', 'type'
+        ]:
+            # Remove underscores and apply sentence case
+            formatted = value.replace('_', ' ').lower()
+            return formatted.capitalize()
+        
+        return value
+    
     def process_tsv_data(self, df) -> Dict[int, Dict]:
         """Process TSV data into hierarchical dictionary structure."""
-        epochs_dict = {}
-        current_epoch = None
+        phases_dict = {}
+        current_phase = None
         current_scene = None
 
         for _, row in df.iterrows():
@@ -28,7 +45,7 @@ class DataProcessor:
 
             # Carry forward phase and scene numbers from previous rows
             if row_data.get('PHASE_NUM'):
-                current_epoch = int(row_data['PHASE_NUM'])
+                current_phase = int(row_data['PHASE_NUM'])
             if row_data.get('SCENE_NUM'):
                 try:
                     current_scene = int(float(row_data['SCENE_NUM']))
@@ -36,26 +53,28 @@ class DataProcessor:
                     # Skip rows with invalid scene numbers
                     continue
 
-            if current_epoch is None or current_scene is None:
+            if current_phase is None or current_scene is None:
                 continue
 
-            shot_num = int(row_data['SHOT_NUM'])
-            self._process_row_data(epochs_dict, row_data, current_epoch, current_scene, shot_num)
+            shot_num = int(str(row_data['SHOT_NUM']).replace('\ufeff', ''))
+            self._process_row_data(phases_dict, row_data, current_phase, current_scene, shot_num)
 
-        return epochs_dict
+        return phases_dict
 
-    def _process_row_data(self, epochs_dict: Dict, row_data: Dict[str, Any],
-                         epoch_num: int, scene_num: int, shot_num: int) -> None:
+    def _process_row_data(
+        self, phases_dict: Dict, row_data: Dict[str, Any],
+        phase_num: int, scene_num: int, shot_num: int
+    ) -> None:
         """Process a single row of data into the hierarchical structure."""
-        self._ensure_epoch_exists(epochs_dict, epoch_num, row_data)
-        self._ensure_scene_exists(epochs_dict, epoch_num, scene_num, row_data)
-        self._add_shot_to_scene(epochs_dict, epoch_num, scene_num, shot_num, row_data)
+        self._ensure_phase_exists(phases_dict, phase_num, row_data)
+        self._ensure_scene_exists(phases_dict, phase_num, scene_num, row_data)
+        self._add_shot_to_scene(phases_dict, phase_num, scene_num, shot_num, row_data)
 
-    def _ensure_epoch_exists(self, epochs_dict: Dict, epoch_num: int, row_data: Dict[str, Any]) -> None:
-        """Create epoch if it doesn't exist."""
-        if epoch_num not in epochs_dict:
-            epochs_dict[epoch_num] = {
-                'epoch_number': epoch_num,
+    def _ensure_phase_exists(self, phases_dict: Dict, phase_num: int, row_data: Dict[str, Any]) -> None:
+        """Create phase if it doesn't exist."""
+        if phase_num not in phases_dict:
+            phases_dict[phase_num] = {
+                'phase_number': phase_num,
                 'time_period': {
                     'start': int(row_data['PHASE_START']) if row_data.get('PHASE_START') else None,
                     'end': int(row_data['PHASE_END']) if row_data.get('PHASE_END') else None
@@ -63,74 +82,92 @@ class DataProcessor:
                 'scenes': {}
             }
 
-    def _ensure_scene_exists(self, epochs_dict: Dict, epoch_num: int, scene_num: int,
-                           row_data: Dict[str, Any]) -> None:
+    def _ensure_scene_exists(
+        self, phases_dict: Dict, phase_num: int, scene_num: int,
+        row_data: Dict[str, Any]
+    ) -> None:
         """Create scene if it doesn't exist."""
-        if scene_num not in epochs_dict[epoch_num]['scenes']:
-            epochs_dict[epoch_num]['scenes'][scene_num] = {
+        if scene_num not in phases_dict[phase_num]['scenes']:
+            phases_dict[phase_num]['scenes'][scene_num] = {
                 'scene_number': scene_num,
-                'location_type': row_data.get('LOC_TYPE'),
-                'time': row_data.get('DIURNAL'),
-                'location': row_data.get('LOCATION'),
+                'comment': row_data.get('SCENE_CONTEXT_COMMENT'),
+                'period': self._format_value(row_data.get('PERIOD'), 'period'),
+                'season': self._format_value(row_data.get('SEASON'), 'season'),
+                'weather': self._format_value(row_data.get('WEATHER'), 'weather'),
+                'location': {
+                    'type': row_data.get('LOC_TYPE'),
+                    'location_name': self._format_value(row_data.get('LOCATION'), 'location_name')
+                },
+                'diurnal': row_data.get('DIURNAL'),
+                'light_source': row_data.get('LIGHT_SOURCE(S)'),
                 'shots': []
             }
 
-    def _add_shot_to_scene(self, epochs_dict: Dict, epoch_num: int, scene_num: int,
-                          shot_num: int, row_data: Dict[str, Any]) -> None:
+    def _add_shot_to_scene(
+        self, phases_dict: Dict, phase_num: int, scene_num: int,
+        shot_num: int, row_data: Dict[str, Any]
+    ) -> None:
         """Create and add shot to the appropriate scene."""
         shot = self._create_shot_data(shot_num, row_data)
-        epochs_dict[epoch_num]['scenes'][scene_num]['shots'].append(shot)
+        phases_dict[phase_num]['scenes'][scene_num]['shots'].append(shot)
 
     def _create_shot_data(self, shot_num: int, row_data: Dict[str, Any]) -> Dict[str, Any]:
         """Create shot data dictionary from row data."""
         return {
             'shot_number': shot_num,
+            'oref': row_data.get('OREF'),
+            'camera_angle': row_data.get('ANGLE'),
+            'specific_area': self._format_value(row_data.get('SPECIFIC AREA'), 'specific_area'),
+            'description': row_data.get('SHOT_DESCRIPTION'),
+            'camera_movement': {
+                'speed': self._format_value(row_data.get('MOVE_SPEED'), 'speed'),
+                'type': self._format_value(row_data.get('MOVE_TYPE'), 'type'),
+                'video_prompt': row_data.get('VIDEO_PROMPT')
+            },
             'shot_timecode': {
                 'in_time': row_data.get('IN'),
                 'out_time': row_data.get('OUT')
             },
-            'specific_area': row_data.get('SPECIFIC AREA'),
-            'camera_movement': {
-                'speed': row_data.get('MOVE_SPEED'),
-                'type': row_data.get('MOVE_TYPE')
-            },
-            'angle': row_data.get('ANGLE'),
-            'description': row_data.get('SHOT_DESCRIPTION')
+            'image_prompt': row_data.get('IMAGE_PROMPT')
         }
 
-    def build_project_structure(self, project: Project, epochs_dict: Dict[int, Dict]) -> Project:
+    def build_project_structure(self, project: Project, phases_dict: Dict[int, Dict]) -> Project:
         """Convert dictionary structure to Pydantic models."""
-        for epoch_num in sorted(epochs_dict.keys()):
-            epoch_data = epochs_dict[epoch_num]
-            epoch = self._create_epoch_model(epoch_data)
-            project.epochs.append(epoch)
-            logger.debug(f"Added Epoch {epoch.epoch_number} with {len(epoch.scenes)} scenes")
+        for phase_num in sorted(phases_dict.keys()):
+            phase_data = phases_dict[phase_num]
+            phase = self._create_phase_model(phase_data)
+            project.phases.append(phase)
+            logger.debug(f"Added Phase {phase.phase_number} with {len(phase.scenes)} scenes")
 
         return project
 
-    def _create_epoch_model(self, epoch_data: Dict) -> Epoch:
-        """Create Epoch model from dictionary data."""
-        epoch = Epoch(
-            epoch_number=epoch_data['epoch_number'],
-            time_period=TimePeriod(**epoch_data['time_period']),
+    def _create_phase_model(self, phase_data: Dict) -> Phase:
+        """Create Phase model from dictionary data."""
+        phase = Phase(
+            phase_number=phase_data['phase_number'],
+            time_period=TimePeriod(**phase_data['time_period']),
             scenes=[]
         )
 
         # Convert scenes dictionary to list
-        for scene_num in sorted(epoch_data['scenes'].keys()):
-            scene_data = epoch_data['scenes'][scene_num]
+        for scene_num in sorted(phase_data['scenes'].keys()):
+            scene_data = phase_data['scenes'][scene_num]
             scene = self._create_scene_model(scene_data)
-            epoch.scenes.append(scene)
+            phase.scenes.append(scene)
 
-        return epoch
+        return phase
 
     def _create_scene_model(self, scene_data: Dict) -> Scene:
         """Create Scene model from dictionary data."""
         scene = Scene(
             scene_number=scene_data['scene_number'],
-            location_type=scene_data['location_type'],
-            time=scene_data['time'],
-            location=scene_data['location'],
+            comment=scene_data['comment'],
+            period=scene_data['period'],
+            season=scene_data['season'],
+            weather=scene_data['weather'],
+            location=Location(**scene_data['location']),
+            diurnal=scene_data['diurnal'],
+            light_source=scene_data['light_source'],
             shots=[]
         )
 
@@ -145,11 +182,13 @@ class DataProcessor:
         """Create Shot model from dictionary data."""
         return Shot(
             shot_number=shot_data['shot_number'],
-            shot_timecode=ShotTimecode(**shot_data['shot_timecode']),
+            oref=shot_data['oref'],
+            camera_angle=shot_data['camera_angle'],
             specific_area=shot_data['specific_area'],
+            description=shot_data['description'],
             camera_movement=CameraMovement(**shot_data['camera_movement']),
-            angle=shot_data['angle'],
-            description=shot_data['description']
+            shot_timecode=ShotTimecode(**shot_data['shot_timecode']),
+            image_prompt=shot_data['image_prompt']
         )
 
     def get_project_title(self, tsv_file, project_title: str = None) -> str:
@@ -163,5 +202,5 @@ class DataProcessor:
         return Project(
             title=project_title,
             total_shots=total_shots,
-            epochs=[]
+            phases=[]
         )

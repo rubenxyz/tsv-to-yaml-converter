@@ -4,96 +4,102 @@ from pathlib import Path
 from typing import Optional
 
 import click
+from rich.console import Console
 
 from .cli_commands import CLICommands
 
+console = Console()
+
 
 @click.group()
-@click.version_option(version="1.0.0", prog_name="tsv-to-yaml-converter")
 @click.option(
     "--project-root",
-    type=click.Path(exists=True, file_okay=False, dir_okay=True, path_type=Path),
+    type=click.Path(exists=True, file_okay=False, path_type=Path),
     default=Path.cwd(),
-    help="Project root directory (default: current directory)"
+    help="Project root directory",
 )
 @click.option(
-    "--verbose", "-v",
-    is_flag=True,
-    help="Enable verbose output"
+    "--verbose", "-v", is_flag=True, help="Enable verbose logging"
 )
 @click.pass_context
-def cli(ctx: click.Context, project_root: Path, verbose: bool) -> None:
-    """TSV to YAML Shot List Converter.
-    
-    A batch processing tool for converting film/video shot lists from TSV format
-    to hierarchical YAML format following standardized input/output patterns.
-    """
+def cli(ctx, project_root: Path, verbose: bool):
+    """TSV to YAML Shot List Converter."""
     ctx.ensure_object(dict)
-    ctx.obj['project_root'] = project_root
-    ctx.obj['verbose'] = verbose
+    ctx.obj["project_root"] = project_root
+    ctx.obj["verbose"] = verbose
 
 
 @cli.command()
 @click.option(
     "--config",
-    type=click.Path(exists=True, file_okay=True, dir_okay=False, path_type=Path),
-    help="Configuration file path (YAML format)"
+    type=click.Path(exists=True, path_type=Path),
+    help="Configuration file path",
 )
 @click.pass_context
-def process(ctx: click.Context, config: Optional[Path]) -> None:
+def process(ctx, config: Optional[Path]):
     """Process all TSV files in the input directory."""
-    commands = CLICommands(ctx.obj['project_root'], ctx.obj['verbose'])
+    project_root = ctx.obj["project_root"]
+    verbose = ctx.obj["verbose"]
+    
+    commands = CLICommands(project_root, verbose)
     commands.process_files(config)
 
 
 @cli.command()
 @click.pass_context
-def analyze(ctx: click.Context) -> None:
+def analyze(ctx):
     """Analyze files without processing them."""
-    commands = CLICommands(ctx.obj['project_root'], ctx.obj['verbose'])
+    project_root = ctx.obj["project_root"]
+    verbose = ctx.obj["verbose"]
+    
+    commands = CLICommands(project_root, verbose)
     commands.analyze_files()
 
 
 @cli.command()
 @click.option(
     "--output",
-    type=click.Path(file_okay=True, dir_okay=False, path_type=Path),
+    type=click.Path(path_type=Path),
     default=Path("config.yaml"),
-    help="Output configuration file path"
+    help="Output configuration file path",
 )
 @click.pass_context
-def init_config(ctx: click.Context, output: Path) -> None:
-    """Initialize a new configuration file."""
-    commands = CLICommands(ctx.obj['project_root'], ctx.obj['verbose'])
+def init_config(ctx, output: Path):
+    """Initialize configuration file."""
+    project_root = ctx.obj["project_root"]
+    verbose = ctx.obj["verbose"]
+    
+    commands = CLICommands(project_root, verbose)
     commands.init_config(output)
 
 
 @cli.command()
 @click.option(
     "--mappings-file",
-    type=click.Path(file_okay=True, dir_okay=False, path_type=Path),
+    type=click.Path(path_type=Path),
     default=Path("mappings.json"),
-    help="Path to mappings configuration file"
+    help="Output mappings file path",
 )
 @click.pass_context
-def init_mappings(ctx: click.Context, mappings_file: Path) -> None:
-    """Initialize a new mappings configuration file."""
-    commands = CLICommands(ctx.obj['project_root'], ctx.obj['verbose'])
+def init_mappings(ctx, mappings_file: Path):
+    """Initialize field mappings file."""
+    project_root = ctx.obj["project_root"]
+    verbose = ctx.obj["verbose"]
+    
+    commands = CLICommands(project_root, verbose)
     commands.init_mappings(mappings_file)
 
 
 @cli.command()
 @click.pass_context
-def status(ctx: click.Context) -> None:
-    """Show current project status."""
-    commands = CLICommands(ctx.obj['project_root'], ctx.obj['verbose'])
+def status(ctx):
+    """Show project status."""
+    project_root = ctx.obj["project_root"]
+    verbose = ctx.obj["verbose"]
+    
+    commands = CLICommands(project_root, verbose)
     commands.status()
 
 
-def main() -> None:
-    """Main entry point."""
+if __name__ == "__main__":
     cli()
-
-
-if __name__ == '__main__':
-    main()
