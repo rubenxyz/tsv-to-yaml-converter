@@ -1,7 +1,7 @@
 """Configuration management for TSV to YAML converter."""
 
 from pathlib import Path
-from typing import Optional, Dict, Any
+from typing import Optional, Dict
 
 import yaml
 import json

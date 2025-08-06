@@ -91,16 +91,16 @@ class TestTSVToYAMLConverter:
         converter = TSVToYAMLConverter(temp_project_dir)
         
         # Test None values
-        assert converter.clean_value(None) is None
-        assert converter.clean_value('') is None
-        assert converter.clean_value('   ') is None
+        assert converter.tsv_reader.clean_value(None) is None
+        assert converter.tsv_reader.clean_value('') is None
+        assert converter.tsv_reader.clean_value('   ') is None
         
         # Test string values
-        assert converter.clean_value('  test  ') == 'test'
-        assert converter.clean_value('test') == 'test'
+        assert converter.tsv_reader.clean_value('  test  ') == 'test'
+        assert converter.tsv_reader.clean_value('test') == 'test'
         
         # Test numeric values
-        assert converter.clean_value(123) == 123
+        assert converter.tsv_reader.clean_value(123) == 123
     def test_convert_tsv_to_yaml(self, temp_project_dir, sample_tsv_file):
         """Test TSV to YAML conversion."""
         converter = TSVToYAMLConverter(temp_project_dir)

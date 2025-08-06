@@ -1,6 +1,6 @@
 """Data models for TSV to YAML converter."""
 
-from typing import Dict, List, Optional, Union
+from typing import List, Optional
 
 from pydantic import BaseModel, Field
 
@@ -59,15 +59,11 @@ class Epoch(BaseModel):
     epoch_number: int
     time_period: TimePeriod
     scenes: List[Scene] = Field(default_factory=list)
+
+
 class Project(BaseModel):
     """Project information."""
     
     title: str
     total_shots: int
     epochs: List[Epoch] = Field(default_factory=list)
-
-
-class ShotList(BaseModel):
-    """Complete shot list structure."""
-    
-    project: Project

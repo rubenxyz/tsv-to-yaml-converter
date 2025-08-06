@@ -10,8 +10,20 @@ __email__ = "claude@example.com"
 
 from .converter import TSVToYAMLConverter
 from .config import Config
+from .tsv_reader import TSVReader
+from .data_processor import DataProcessor
+from .yaml_writer import YAMLWriter
+from .file_manager import FileManager
+from .error_handler import ErrorHandler
+from .cli_commands import CLICommands
 
 __all__ = [
     "TSVToYAMLConverter",
     "Config",
+    "TSVReader",
+    "DataProcessor",
+    "YAMLWriter",
+    "FileManager",
+    "ErrorHandler",
+    "CLICommands",
 ]
