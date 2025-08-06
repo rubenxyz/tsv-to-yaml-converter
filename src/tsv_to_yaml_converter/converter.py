@@ -3,6 +3,8 @@
 from pathlib import Path
 from typing import Optional
 
+from loguru import logger
+
 from .config import Config
 from .data_processor import DataProcessor
 from .error_handler import ErrorHandler
@@ -47,7 +49,12 @@ class TSVToYAMLConverter:
         return self.error_handler.stats
 
     def convert_tsv_to_yaml(
-        self, tsv_file: Path, output_file: Path, project_title: Optional[str] = None
+        self,
+        tsv_file: Path,
+        output_file: Path,
+        project_title: Optional[str] = None,
+        no_camera_movement: bool = False,
+        no_shot_timecode: bool = False,
     ) -> bool:
         """
         Convert TSV shot list to hierarchical YAML format.
@@ -56,6 +63,8 @@ class TSVToYAMLConverter:
             tsv_file: Path to input TSV file
             output_file: Path to output YAML file
             project_title: Optional project title (inferred from filename if not provided)
+            no_camera_movement: Exclude camera_movement section from output
+            no_shot_timecode: Exclude shot_timecode section from output
 
         Returns:
             bool: True if conversion successful, False otherwise
@@ -74,7 +83,9 @@ class TSVToYAMLConverter:
             phases_dict = self.data_processor.process_tsv_data(df)
 
             # Convert to Pydantic models
-            project = self.data_processor.build_project_structure(project, phases_dict)
+            project = self.data_processor.build_project_structure(
+                project, phases_dict, no_camera_movement, no_shot_timecode
+            )
 
             # Generate statistics and write output
             self.yaml_writer.finalize_and_write(project, output_file)
@@ -108,24 +119,26 @@ class TSVToYAMLConverter:
 
         return analysis_results
 
-    def process_files(self, config_file: Optional[Path] = None) -> bool:
+    def process_files(
+        self,
+        config_file: Optional[Path] = None,
+        no_camera_movement: bool = False,
+        no_shot_timecode: bool = False,
+    ) -> bool:
         """Process all TSV files in the input directory."""
-        from loguru import logger
-
-        logger.info("Starting batch processing...")
         self.error_handler.start_processing()
 
         # Load configuration if provided
         if config_file and config_file.exists():
             try:
                 self.config = Config.from_file(config_file)
-                logger.info(f"Loaded configuration from {config_file}")
+                logger.debug(f"Loaded configuration from {config_file}")
             except Exception as e:
                 logger.warning(f"Failed to load configuration: {e}")
 
         # Get timestamped output directory
         output_dir = self.file_manager.get_timestamped_output_dir()
-        logger.info(f"Output directory: {output_dir}")
+        logger.debug(f"Output directory: {output_dir}")
 
         # Find all TSV files in input directory
         tsv_files = self.file_manager.find_tsv_files()
@@ -139,7 +152,7 @@ class TSVToYAMLConverter:
 
         # Process each file
         for tsv_file in tsv_files:
-            logger.info(f"Processing {tsv_file.name}...")
+            logger.debug(f"Processing {tsv_file.name}...")
 
             # Determine output path
             output_path = self.file_manager.get_output_path(tsv_file, output_dir)
@@ -148,7 +161,13 @@ class TSVToYAMLConverter:
             project_title = self.config.project_title
 
             # Convert the file
-            success = self.convert_tsv_to_yaml(tsv_file, output_path, project_title)
+            success = self.convert_tsv_to_yaml(
+                tsv_file,
+                output_path,
+                project_title,
+                no_camera_movement,
+                no_shot_timecode,
+            )
 
             if success:
                 self.error_handler.log_success(tsv_file)

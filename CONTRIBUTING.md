@@ -93,204 +93,287 @@ tsv-to-yaml-converter/
 │   └── tsv_to_yaml_converter/
 │       ├── __init__.py
 │       ├── __main__.py          # CLI entry point
-│       ├── converter.py         # Core conversion logic
+│       ├── converter.py         # Core conversion logic (orchestrator)
+│       ├── cli_commands.py      # CLI command implementations
+│       ├── data_processor.py    # Data transformation logic
+│       ├── tsv_reader.py        # TSV file reading and validation
+│       ├── yaml_writer.py       # YAML file writing and formatting
+│       ├── file_manager.py      # File system operations
+│       ├── error_handler.py     # Error handling and logging
 │       ├── config.py            # Configuration management
-│       ├── models.py            # Data models
-│       └── logging.py           # Logging utilities
+│       └── models.py            # Pydantic data models
 ├── tests/
-│   ├── __init__.py
-│   └── test_converter.py        # Unit tests
+│   ├── conftest.py             # Shared test fixtures
+│   ├── test_converter.py       # Core conversion tests
+│   ├── test_config.py          # Configuration tests
+│   └── test_models.py          # Model validation tests
 ├── docs/                        # Documentation
 ├── pyproject.toml               # Project configuration
-└── README.md                    # Main documentation
+├── README.md                    # Main documentation
+└── USER-FILES/                  # User data (gitignored)
 ```
 
-## Development Workflow
+## Development Guidelines
 
-### 1. Create a Feature Branch
+### Code Organization
 
-```bash
-git checkout -b feature/your-feature-name
-```
+The project follows a modular architecture with clear separation of concerns:
 
-### 2. Make Your Changes
+- **`converter.py`**: Main orchestrator that coordinates the conversion process
+- **`cli_commands.py`**: CLI command implementations and UI logic
+- **`data_processor.py`**: Data transformation and model building logic
+- **`tsv_reader.py`**: TSV file reading, validation, and data cleaning
+- **`yaml_writer.py`**: YAML file writing and formatting
+- **`file_manager.py`**: File system operations and directory management
+- **`error_handler.py`**: Error handling, logging, and statistics
+- **`config.py`**: Configuration management and validation
+- **`models.py`**: Pydantic data models for type safety
 
-- Write code following the style guidelines
-- Add tests for new functionality
-- Update documentation as needed
+### Refactoring Guidelines
 
-### 3. Test Your Changes
+When contributing, please follow these refactoring principles:
 
-```bash
-# Run all tests
-pytest
+#### File Size Limits
+- **Maximum file size**: 150 lines per file
+- **Target file size**: 50-100 lines for optimal maintainability
+- **Large files**: Split into smaller, focused components
 
-# Run quality checks
-black src/ tests/
-isort src/ tests/
-flake8 src/ tests/
-mypy src/
-```
+#### Single Responsibility Principle
+- Each class should have one clear responsibility
+- Each method should do one thing well
+- Extract complex logic into separate modules
 
-### 4. Commit Your Changes
+#### Code Quality Standards
+- **No unused imports**: All imports must be actively used
+- **Type hints**: All functions should have complete type annotations
+- **Docstrings**: All public methods should have clear docstrings
+- **Test coverage**: New features must include comprehensive tests
 
-Use conventional commit messages:
+### Current Refactoring Priorities
 
-```bash
-git commit -m "feat: add new configuration option"
-git commit -m "fix: resolve issue with file processing"
-git commit -m "docs: update API documentation"
-```
+Based on the latest analysis (`temp/refactor.md`), the following refactoring is planned:
 
-### 5. Push and Create a Pull Request
+#### High Priority (Immediate)
+1. **Split `cli_commands.py`** (231 lines)
+   - Extract UI components to `cli/ui.py`
+   - Extract error handling to `cli/error_handler.py`
+   - Extract mappings logic to `cli/mappings.py`
 
-```bash
-git push origin feature/your-feature-name
-```
+2. **Split `data_processor.py`** (223 lines)
+   - Extract field mapping to `processing/field_mapper.py`
+   - Extract validation to `processing/validator.py`
+   - Extract formatting to `processing/formatter.py`
 
-Then create a pull request on GitHub.
+#### Medium Priority (Next Sprint)
+3. **Extract analysis logic** from `converter.py`
+   - Create `analysis/validator.py`
+   - Create `analysis/analyzer.py`
 
-## Commit Message Guidelines
+### Code Quality Issues to Address
 
-We follow the [Conventional Commits](https://www.conventionalcommits.org/) specification:
+The project currently has 117 flake8 violations that need to be addressed:
 
-- `feat`: New features
-- `fix`: Bug fixes
-- `docs`: Documentation changes
-- `style`: Code style changes (formatting, etc.)
-- `refactor`: Code refactoring
-- `test`: Adding or updating tests
-- `chore`: Maintenance tasks
+- **64 line length violations**: Break long lines, extract variables
+- **53 whitespace issues**: Remove trailing whitespace, fix blank lines
+- **3 missing newlines**: Add newlines at end of files
 
-Examples:
-```
-feat: add support for custom output formats
-fix: resolve issue with empty TSV files
-docs: update installation instructions
-test: add unit tests for configuration validation
+## Feature Development
+
+### Adding New Features
+
+1. **Create a feature branch**:
+   ```bash
+   git checkout -b feature/your-feature-name
+   ```
+
+2. **Follow the development workflow**:
+   - Write tests first (TDD approach)
+   - Implement the feature
+   - Ensure all tests pass
+   - Run code quality tools
+   - Update documentation
+
+3. **Update tests**: Add comprehensive tests for new functionality
+
+4. **Update documentation**: Update README.md and other relevant docs
+
+### Example: Adding a New CLI Flag
+
+```python
+# In __main__.py
+@click.option(
+    "--new-flag",
+    is_flag=True,
+    help="Description of the new flag"
+)
+def process(ctx, config, new_flag):
+    """Process all TSV files in the input directory."""
+    commands = CLICommands(project_root, verbose)
+    commands.process_files(config, new_flag)
+
+# In cli_commands.py
+def process_files(self, config, new_flag=False):
+    """Process all TSV files in the input directory."""
+    # Implementation here
+    pass
+
+# Add tests in test_converter.py
+def test_process_with_new_flag():
+    """Test processing with the new flag."""
+    # Test implementation
+    pass
 ```
 
 ## Testing Guidelines
 
-### Writing Tests
+### Test Structure
 
-- Write tests for all new functionality
-- Use descriptive test names
-- Follow the AAA pattern (Arrange, Act, Assert)
-- Use fixtures for common setup
+- **Unit tests**: Test individual components in isolation
+- **Integration tests**: Test component interactions
+- **End-to-end tests**: Test complete workflows
 
-Example:
-```python
-def test_convert_tsv_to_yaml_success(temp_project_dir, sample_tsv_file):
-    """Test successful TSV to YAML conversion."""
-    # Arrange
-    converter = TSVToYAMLConverter(temp_project_dir)
-    output_file = temp_project_dir / "output.yaml"
-    
-    # Act
-    success = converter.convert_tsv_to_yaml(sample_tsv_file, output_file)
-    
-    # Assert
-    assert success
-    assert output_file.exists()
-```
+### Test Naming
+
+- Use descriptive test names that explain the expected behavior
+- Follow the pattern: `test_<method_name>_<scenario>`
 
 ### Test Coverage
 
-- Aim for high test coverage (80%+)
-- Focus on critical paths and edge cases
+- Aim for 90%+ test coverage
 - Test both success and failure scenarios
+- Test edge cases and boundary conditions
+
+### Example Test
+
+```python
+def test_data_processor_formats_values_correctly():
+    """Test that value formatting works correctly."""
+    processor = DataProcessor(mock_tsv_reader)
+    
+    # Test sentence case formatting
+    assert processor._format_value("MEDIEVAL_PERIOD", "period") == "Medieval period"
+    
+    # Test underscore removal
+    assert processor._format_value("CASTLE_HALL", "location_name") == "Castle hall"
+```
 
 ## Documentation Guidelines
 
 ### Code Documentation
 
-- Use docstrings for all public functions and classes
-- Follow Google docstring format
-- Include type hints for all parameters and return values
+- **Docstrings**: Use Google-style docstrings for all public methods
+- **Type hints**: Include complete type annotations
+- **Comments**: Add comments for complex logic
 
-Example:
+### Example Docstring
+
 ```python
-def convert_tsv_to_yaml(
-    tsv_file: Path,
-    output_file: Path,
-    project_title: Optional[str] = None
-) -> bool:
-    """Convert TSV shot list to hierarchical YAML format.
+def process_tsv_data(self, df: pd.DataFrame) -> Dict[int, Dict]:
+    """Process TSV data into hierarchical dictionary structure.
     
     Args:
-        tsv_file: Path to input TSV file
-        output_file: Path to output YAML file
-        project_title: Optional project title (inferred from filename if not provided)
-    
+        df: Pandas DataFrame containing TSV data
+        
     Returns:
-        bool: True if conversion successful, False otherwise
+        Dictionary with phase numbers as keys and phase data as values
+        
+    Raises:
+        ValueError: If DataFrame is empty or invalid
     """
 ```
 
-### User Documentation
+### README Updates
 
-- Update README.md for user-facing changes
-- Add examples for new features
-- Keep documentation clear and concise
+When adding new features, update the README.md to include:
 
-## Pull Request Guidelines
+- Feature description
+- Usage examples
+- Configuration options
+- Changelog entry
 
-### Before Submitting
+## Pull Request Process
 
-1. **Ensure all tests pass**:
-   ```bash
-   pytest
-   ```
+1. **Create a feature branch** from `main`
+2. **Make your changes** following the guidelines above
+3. **Run all tests** and ensure they pass
+4. **Run code quality tools** and fix any issues
+5. **Update documentation** as needed
+6. **Create a pull request** with a clear description
 
-2. **Run quality checks**:
-   ```bash
-   black src/ tests/
-   isort src/ tests/
-   flake8 src/ tests/
-   mypy src/
-   ```
+### Pull Request Template
 
-3. **Update documentation** if needed
+```markdown
+## Description
+Brief description of the changes
 
-4. **Add tests** for new functionality
+## Type of Change
+- [ ] Bug fix
+- [ ] New feature
+- [ ] Breaking change
+- [ ] Documentation update
 
-### Pull Request Description
+## Testing
+- [ ] All tests pass
+- [ ] New tests added for new functionality
+- [ ] Code coverage maintained or improved
 
-Include:
-- Description of changes
-- Motivation for changes
-- Any breaking changes
-- Screenshots (if UI changes)
-- Test results
+## Code Quality
+- [ ] Code follows style guidelines
+- [ ] No flake8 violations
+- [ ] Type hints added where appropriate
 
-## Issue Reporting
+## Documentation
+- [ ] README.md updated
+- [ ] Docstrings added/updated
+- [ ] Changelog updated
+```
 
-When reporting issues:
+## Code Review Guidelines
 
-1. Use the issue template
-2. Provide clear steps to reproduce
-3. Include error messages and stack traces
-4. Specify your environment (OS, Python version, etc.)
+### For Reviewers
 
-## Code Review
+- **Check functionality**: Ensure the code works as intended
+- **Review test coverage**: Verify adequate test coverage
+- **Check code quality**: Look for style and quality issues
+- **Verify documentation**: Ensure documentation is updated
+- **Consider performance**: Check for potential performance issues
 
-All contributions require code review. Reviewers will check:
+### For Contributors
 
-- Code quality and style
-- Test coverage
-- Documentation updates
-- Performance implications
-- Security considerations
+- **Respond promptly** to review comments
+- **Make requested changes** or explain why they're not needed
+- **Test changes** after addressing feedback
+- **Update PR** with any additional changes
+
+## Release Process
+
+### Version Bumping
+
+- **Patch version** (1.0.1): Bug fixes
+- **Minor version** (1.1.0): New features
+- **Major version** (2.0.0): Breaking changes
+
+### Release Checklist
+
+- [ ] All tests pass
+- [ ] Code quality tools pass
+- [ ] Documentation is up to date
+- [ ] Changelog is updated
+- [ ] Version is bumped in pyproject.toml
+- [ ] Release notes are prepared
 
 ## Getting Help
 
-If you need help:
+If you need help with development:
 
-1. Check the documentation
-2. Search existing issues
-3. Create a new issue with the "question" label
-4. Join our community discussions
+1. **Check the documentation**: README.md and this file
+2. **Review existing code**: Look at similar implementations
+3. **Run tests**: Use tests as examples of expected behavior
+4. **Ask questions**: Open an issue for clarification
+
+## Code of Conduct
+
+This project follows the Contributor Covenant Code of Conduct. Please be respectful and inclusive in all interactions.
 
 ## License
 

@@ -4,11 +4,8 @@ from pathlib import Path
 from typing import Optional
 
 import click
-from rich.console import Console
 
-from .cli_commands import CLICommands
-
-console = Console()
+from .cli.commands import CLICommands
 
 
 @click.group()
@@ -35,14 +32,29 @@ def cli(ctx, project_root: Path, verbose: bool):
     type=click.Path(exists=True, path_type=Path),
     help="Configuration file path",
 )
+@click.option(
+    "--no-camera-movement",
+    is_flag=True,
+    help="Exclude camera_movement section from YAML output",
+)
+@click.option(
+    "--no-shot-timecode",
+    is_flag=True,
+    help="Exclude shot_timecode section from YAML output",
+)
 @click.pass_context
-def process(ctx, config: Optional[Path]):
+def process(
+    ctx,
+    config: Optional[Path],
+    no_camera_movement: bool,
+    no_shot_timecode: bool,
+):
     """Process all TSV files in the input directory."""
     project_root = ctx.obj["project_root"]
     verbose = ctx.obj["verbose"]
-    
+
     commands = CLICommands(project_root, verbose)
-    commands.process_files(config)
+    commands.process_files(config, no_camera_movement, no_shot_timecode)
 
 
 @cli.command()
@@ -51,7 +63,7 @@ def analyze(ctx):
     """Analyze files without processing them."""
     project_root = ctx.obj["project_root"]
     verbose = ctx.obj["verbose"]
-    
+
     commands = CLICommands(project_root, verbose)
     commands.analyze_files()
 
@@ -68,7 +80,7 @@ def init_config(ctx, output: Path):
     """Initialize configuration file."""
     project_root = ctx.obj["project_root"]
     verbose = ctx.obj["verbose"]
-    
+
     commands = CLICommands(project_root, verbose)
     commands.init_config(output)
 
@@ -85,7 +97,7 @@ def init_mappings(ctx, mappings_file: Path):
     """Initialize field mappings file."""
     project_root = ctx.obj["project_root"]
     verbose = ctx.obj["verbose"]
-    
+
     commands = CLICommands(project_root, verbose)
     commands.init_mappings(mappings_file)
 
@@ -96,7 +108,7 @@ def status(ctx):
     """Show project status."""
     project_root = ctx.obj["project_root"]
     verbose = ctx.obj["verbose"]
-    
+
     commands = CLICommands(project_root, verbose)
     commands.status()
 

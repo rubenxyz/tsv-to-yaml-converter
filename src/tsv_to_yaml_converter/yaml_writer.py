@@ -8,6 +8,13 @@ from loguru import logger
 from .models import Project
 
 
+def represent_str(dumper, data):
+    """Custom string representer that handles strings longer than 80 characters."""
+    if len(data) > 80:  # If string is longer than 80 characters
+        return dumper.represent_scalar("tag:yaml.org,2002:str", data, style="|")
+    return dumper.represent_scalar("tag:yaml.org,2002:str", data)
+
+
 class YAMLWriter:
     """Handles YAML output formatting and writing."""
 
@@ -15,6 +22,8 @@ class YAMLWriter:
         """Initialize the YAML writer with formatting options."""
         self.yaml_indent = yaml_indent
         self.yaml_width = yaml_width
+        # Register custom representer for strings
+        yaml.add_representer(str, represent_str)
 
     def write_yaml_file(self, project: Project, output_file: Path) -> None:
         """Write project data to YAML file with custom formatting."""
@@ -57,14 +66,14 @@ class YAMLWriter:
         # Write YAML file
         self.write_yaml_file(project, output_file)
 
-        # Log success
+        # Log success with statistics
         total_phases = len(project.phases)
         total_scenes = sum(len(phase.scenes) for phase in project.phases)
         total_shots = sum(
             len(scene.shots) for phase in project.phases for scene in phase.scenes
         )
 
-        logger.info(f"Successfully wrote YAML to {output_file.name}")
-        logger.info(
+        logger.debug(f"Successfully wrote YAML to {output_file.name}")
+        logger.debug(
             f"  → {total_phases} phases, {total_scenes} scenes, {total_shots} shots"
         )

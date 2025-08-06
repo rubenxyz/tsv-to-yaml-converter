@@ -1,4 +1,4 @@
-"""File management functionality for handling directories and file operations."""
+"""File management functionality for TSV to YAML converter directory and file operations."""
 
 from datetime import datetime
 from pathlib import Path
@@ -48,7 +48,7 @@ class FileManager:
 
     def analyze_files(self) -> Dict[str, Any]:
         """Analyze all files in the input directory."""
-        logger.info("Starting analysis mode...")
+        logger.debug("Starting analysis mode...")
 
         analysis_results = {
             "timestamp": datetime.now().isoformat(),
@@ -89,7 +89,7 @@ class FileManager:
 
                 analysis_results["file_details"].append(file_info)
 
-        logger.info(
+        logger.debug(
             f"Analysis complete: {analysis_results['total_files']} total files, {analysis_results['valid_tsv_files']} valid TSV files"
         )
 

@@ -2,7 +2,7 @@
 
 from typing import List, Optional
 
-from pydantic import BaseModel, Field
+from pydantic import BaseModel, ConfigDict, Field
 
 
 class ShotTimecode(BaseModel):
@@ -11,8 +11,7 @@ class ShotTimecode(BaseModel):
     in_time: Optional[str] = Field(default=None, alias="in")
     out_time: Optional[str] = Field(default=None, alias="out")
 
-    class Config:
-        populate_by_name = True
+    model_config = ConfigDict(populate_by_name=True)
 
 
 class CameraMovement(BaseModel):
@@ -38,8 +37,8 @@ class Shot(BaseModel):
     camera_angle: Optional[str] = None
     specific_area: Optional[str] = None
     description: Optional[str] = None
-    camera_movement: CameraMovement
-    shot_timecode: ShotTimecode
+    camera_movement: Optional[CameraMovement] = None
+    shot_timecode: Optional[ShotTimecode] = None
     image_prompt: Optional[str] = None
 
 

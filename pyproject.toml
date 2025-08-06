@@ -4,8 +4,8 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "tsv-to-yaml-converter"
-version = "1.0.0"
-description = "Batch convert TSV shot lists to hierarchical YAML format"
+version = "1.1.0"
+description = "Batch convert TSV shot lists to hierarchical YAML format with advanced features"
 readme = "README.md"
 license = {text = "MIT"}
 authors = [
@@ -22,6 +22,7 @@ classifiers = [
     "Programming Language :: Python :: 3.12",
     "Topic :: Software Development :: Libraries :: Python Modules",
     "Topic :: Text Processing :: Markup",
+    "Topic :: Utilities",
 ]
 requires-python = ">=3.9"
 dependencies = [
@@ -51,6 +52,7 @@ tsv-to-yaml = "tsv_to_yaml_converter.__main__:main"
 Homepage = "https://github.com/example/tsv-to-yaml-converter"
 Repository = "https://github.com/example/tsv-to-yaml-converter"
 Issues = "https://github.com/example/tsv-to-yaml-converter/issues"
+Documentation = "https://github.com/example/tsv-to-yaml-converter/blob/main/README.md"
 
 [tool.setuptools.packages.find]
 where = ["src"]
@@ -98,24 +100,14 @@ strict_equality = true
 testpaths = ["tests"]
 python_files = ["test_*.py"]
 python_classes = ["Test*"]
-python_functions = ["test_*"]
-addopts = [
-    "--strict-markers",
-    "--strict-config",
-    "--cov=src/tsv_to_yaml_converter",
-    "--cov-report=term-missing",
-    "--cov-report=html",
-]
-markers = [
-    "slow: marks tests as slow (deselect with '-m \"not slow\"')",
-    "integration: marks tests as integration tests",
-]
+addopts = "--strict-markers --strict-config"
 
 [tool.coverage.run]
-source = ["src/tsv_to_yaml_converter"]
+source = ["src"]
 omit = [
     "*/tests/*",
     "*/test_*",
+    "*/__pycache__/*",
 ]
 
 [tool.coverage.report]
