@@ -168,7 +168,7 @@ def init_mappings(ctx: click.Context, mappings_file: Path) -> None:
     try:
         # Create default mappings
         default_mappings = {
-            "TIME": {
+            "DIURNAL": {
                 "GH": "Golden Hour",
                 "MH": "Magic Hour", 
                 "BH": "Blue Hour",

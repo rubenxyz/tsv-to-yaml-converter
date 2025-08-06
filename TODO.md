@@ -32,12 +32,12 @@ Modify the existing converter to handle the V.00.02.ISOF.tsv file and output YAM
 
 ## Field Mappings Needed
 ```
-EPOCH_NUM → project.epochs[].epoch_number
-EPOCH_START → project.epochs[].time_period.start
-EPOCH_END → project.epochs[].time_period.end
+PHASE_NUM → project.epochs[].epoch_number
+PHASE_START → project.epochs[].time_period.start
+PHASE_END → project.epochs[].time_period.end
 SCENE_NUM → project.epochs[].scenes[].scene_number
 LOC_TYPE → project.epochs[].scenes[].location_type
-TIME → project.epochs[].scenes[].time
+DIURNAL → project.epochs[].scenes[].time
 LOCATION → project.epochs[].scenes[].location
 SPECIFIC_AREA → project.epochs[].scenes[].shots[].specific_area
 SHOT_NUM → project.epochs[].scenes[].shots[].shot_number

@@ -146,9 +146,9 @@ class TSVToYAMLConverter:
             if not self._is_valid_row(row_data):
                 continue
             
-            # Carry forward epoch and scene numbers from previous rows
-            if row_data.get('EPOCH_NUM'):
-                current_epoch = int(row_data['EPOCH_NUM'])
+            # Carry forward phase and scene numbers from previous rows
+            if row_data.get('PHASE_NUM'):
+                current_epoch = int(row_data['PHASE_NUM'])
             if row_data.get('SCENE_NUM'):
                 try:
                     current_scene = int(float(row_data['SCENE_NUM']))
@@ -187,8 +187,8 @@ class TSVToYAMLConverter:
             epochs_dict[epoch_num] = {
                 'epoch_number': epoch_num,
                 'time_period': {
-                    'start': int(row_data['EPOCH_START']) if row_data.get('EPOCH_START') else None,
-                    'end': int(row_data['EPOCH_END']) if row_data.get('EPOCH_END') else None
+                    'start': int(row_data['PHASE_START']) if row_data.get('PHASE_START') else None,
+                    'end': int(row_data['PHASE_END']) if row_data.get('PHASE_END') else None
                 },
                 'scenes': {}
             }
@@ -200,7 +200,7 @@ class TSVToYAMLConverter:
             epochs_dict[epoch_num]['scenes'][scene_num] = {
                 'scene_number': scene_num,
                 'location_type': row_data.get('LOC_TYPE'),
-                'time': row_data.get('TIME'),
+                'time': row_data.get('DIURNAL'),
                 'location': row_data.get('LOCATION'),
                 'shots': []
             }

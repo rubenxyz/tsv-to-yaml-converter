@@ -26,12 +26,12 @@ def sample_tsv_data():
     """Sample TSV data for testing."""
     return [
         {
-            'EPOCH_NUM': '1',
-            'EPOCH_START': '1800',
-            'EPOCH_END': '1900',
+            'PHASE_NUM': '1',
+            'PHASE_START': '1800',
+            'PHASE_END': '1900',
             'SCENE_NUM': '1',
             'LOC_TYPE': 'Interior',
-            'TIME': 'Day',
+            'DIURNAL': 'Day',
             'LOCATION': 'Living Room',
             'SHOT_NUM': '1',
             'IN': '00:00:00:00',
@@ -43,12 +43,12 @@ def sample_tsv_data():
             'SHOT_DESCRIPTION': 'Establishing shot'
         },
         {
-            'EPOCH_NUM': '1',
-            'EPOCH_START': '1800',
-            'EPOCH_END': '1900',
+            'PHASE_NUM': '1',
+            'PHASE_START': '1800',
+            'PHASE_END': '1900',
             'SCENE_NUM': '1',
             'LOC_TYPE': 'Interior',
-            'TIME': 'Day',
+            'DIURNAL': 'Day',
             'LOCATION': 'Living Room',
             'SHOT_NUM': '2',
             'IN': '00:00:05:00',

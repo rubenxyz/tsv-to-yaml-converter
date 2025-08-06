@@ -124,12 +124,12 @@ project_root/
 ## Input Format
 
 The converter expects TSV files with the following columns:
-- `EPOCH_NUM`: Epoch number
-- `EPOCH_START`: Epoch start time
-- `EPOCH_END`: Epoch end time
+- `PHASE_NUM`: Phase number
+- `PHASE_START`: Phase start time
+- `PHASE_END`: Phase end time
 - `SCENE_NUM`: Scene number
 - `LOC_TYPE`: Location type
-- `TIME`: Time of day
+- `DIURNAL`: Time of day
 - `LOCATION`: Location description
 - `SHOT_NUM`: Shot number
 - `IN`: Timecode in

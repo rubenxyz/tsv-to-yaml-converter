@@ -1,6 +1,6 @@
 {
   "field_mappings": {
-    "TIME": {
+    "DIURNAL": {
       "GH": "Golden Hour",
       "MH": "Magic Hour", 
       "BH": "Blue Hour",
